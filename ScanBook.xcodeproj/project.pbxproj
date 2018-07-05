@@ -7,25 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BDA4076A20EB696D00EC4791 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA4076920EB696D00EC4791 /* AppDelegate.m */; };
-		BDA4076D20EB696D00EC4791 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA4076C20EB696D00EC4791 /* ViewController.m */; };
+		0F8D40A827349924B0DD02C0 /* Pods_ScanBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 127DE408B5E2A30B13B6A23A /* Pods_ScanBook.framework */; };
+		BD20D73A20EC5023000E36BF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D73920EC5023000E36BF /* MainViewController.m */; };
+		BD20D74020EC5316000E36BF /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D73F20EC5316000E36BF /* RootNavigationController.m */; };
+		BD20D74320EC542A000E36BF /* ScanBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D74220EC542A000E36BF /* ScanBookViewController.m */; };
+		BD20D74820EC570E000E36BF /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D74720EC570E000E36BF /* LeftViewController.m */; };
+		BD20D74B20EC571B000E36BF /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D74A20EC571B000E36BF /* RightViewController.m */; };
+		BD20D74F20EC82E8000E36BF /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD20D74C20EC82E7000E36BF /* plus@2x.png */; };
+		BD20D75020EC82E8000E36BF /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD20D74D20EC82E8000E36BF /* edit@2x.png */; };
+		BD20D75120EC82E8000E36BF /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD20D74E20EC82E8000E36BF /* menu@2x.png */; };
+		BD20D75A20ECA991000E36BF /* UIColor+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D75920ECA991000E36BF /* UIColor+Utility.m */; };
+		BD20D75C20ECB79C000E36BF /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD20D75B20ECB79C000E36BF /* home@2x.png */; };
+		BD20D75F20ECB7EF000E36BF /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D75E20ECB7EF000E36BF /* UIImage+Utility.m */; };
+		BD20D76320ECBC3F000E36BF /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D76220ECBC3F000E36BF /* ScannerViewController.m */; };
+		BDA4076A20EB696D00EC4791 /* ScanBookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA4076920EB696D00EC4791 /* ScanBookAppDelegate.m */; };
 		BDA4077020EB696D00EC4791 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA4076E20EB696D00EC4791 /* Main.storyboard */; };
 		BDA4077220EB696E00EC4791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDA4077120EB696E00EC4791 /* Assets.xcassets */; };
 		BDA4077520EB696E00EC4791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA4077320EB696E00EC4791 /* LaunchScreen.storyboard */; };
 		BDA4077820EB696E00EC4791 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA4077720EB696E00EC4791 /* main.m */; };
+		BDA4078420EB747700EC4791 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA4078320EB747700EC4791 /* TutorialViewController.m */; };
+		BDA4079420EB84B400EC4791 /* checkbox_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDA4079120EB84B300EC4791 /* checkbox_on@2x.png */; };
+		BDA4079520EB84B400EC4791 /* checkbox_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDA4079220EB84B300EC4791 /* checkbox_off@2x.png */; };
+		BDA4079620EB84B400EC4791 /* close_round@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDA4079320EB84B300EC4791 /* close_round@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		127DE408B5E2A30B13B6A23A /* Pods_ScanBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScanBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37381EB5626586199313D97B /* Pods-ScanBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanBook/Pods-ScanBook.debug.xcconfig"; sourceTree = "<group>"; };
+		8A0B189D4DDF414097916971 /* Pods-ScanBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanBook/Pods-ScanBook.release.xcconfig"; sourceTree = "<group>"; };
+		BD20D73820EC5023000E36BF /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		BD20D73920EC5023000E36BF /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		BD20D73E20EC5316000E36BF /* RootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
+		BD20D73F20EC5316000E36BF /* RootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
+		BD20D74120EC542A000E36BF /* ScanBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanBookViewController.h; sourceTree = "<group>"; };
+		BD20D74220EC542A000E36BF /* ScanBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanBookViewController.m; sourceTree = "<group>"; };
+		BD20D74620EC570E000E36BF /* LeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		BD20D74720EC570E000E36BF /* LeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		BD20D74920EC571B000E36BF /* RightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
+		BD20D74A20EC571B000E36BF /* RightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
+		BD20D74C20EC82E7000E36BF /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
+		BD20D74D20EC82E8000E36BF /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
+		BD20D74E20EC82E8000E36BF /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		BD20D75820ECA991000E36BF /* UIColor+Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utility.h"; sourceTree = "<group>"; };
+		BD20D75920ECA991000E36BF /* UIColor+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utility.m"; sourceTree = "<group>"; };
+		BD20D75B20ECB79C000E36BF /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		BD20D75D20ECB7EF000E36BF /* UIImage+Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utility.h"; sourceTree = "<group>"; };
+		BD20D75E20ECB7EF000E36BF /* UIImage+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utility.m"; sourceTree = "<group>"; };
+		BD20D76120ECBC3F000E36BF /* ScannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
+		BD20D76220ECBC3F000E36BF /* ScannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
 		BDA4076520EB696D00EC4791 /* ScanBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDA4076820EB696D00EC4791 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BDA4076920EB696D00EC4791 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BDA4076B20EB696D00EC4791 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BDA4076C20EB696D00EC4791 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BDA4076820EB696D00EC4791 /* ScanBookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanBookAppDelegate.h; sourceTree = "<group>"; };
+		BDA4076920EB696D00EC4791 /* ScanBookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanBookAppDelegate.m; sourceTree = "<group>"; };
 		BDA4076F20EB696D00EC4791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BDA4077120EB696E00EC4791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDA4077420EB696E00EC4791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDA4077620EB696E00EC4791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDA4077720EB696E00EC4791 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BDA4078220EB747700EC4791 /* TutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		BDA4078320EB747700EC4791 /* TutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		BDA4078620EB7BF300EC4791 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		BDA4078820EB7E4B00EC4791 /* ScanBook_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanBook_Prefix.pch; sourceTree = "<group>"; };
+		BDA4079120EB84B300EC4791 /* checkbox_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_on@2x.png"; sourceTree = "<group>"; };
+		BDA4079220EB84B300EC4791 /* checkbox_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_off@2x.png"; sourceTree = "<group>"; };
+		BDA4079320EB84B300EC4791 /* close_round@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_round@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +77,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F8D40A827349924B0DD02C0 /* Pods_ScanBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C5E86B329B08B8B66A3C4D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37381EB5626586199313D97B /* Pods-ScanBook.debug.xcconfig */,
+				8A0B189D4DDF414097916971 /* Pods-ScanBook.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BD20D74420EC56D3000E36BF /* LeftSlider */ = {
+			isa = PBXGroup;
+			children = (
+				BD20D74620EC570E000E36BF /* LeftViewController.h */,
+				BD20D74720EC570E000E36BF /* LeftViewController.m */,
+			);
+			path = LeftSlider;
+			sourceTree = "<group>";
+		};
+		BD20D74520EC56E3000E36BF /* RightSlider */ = {
+			isa = PBXGroup;
+			children = (
+				BD20D74920EC571B000E36BF /* RightViewController.h */,
+				BD20D74A20EC571B000E36BF /* RightViewController.m */,
+			);
+			path = RightSlider;
+			sourceTree = "<group>";
+		};
+		BD20D76020ECBC0A000E36BF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BD20D73820EC5023000E36BF /* MainViewController.h */,
+				BD20D73920EC5023000E36BF /* MainViewController.m */,
+				BD20D73E20EC5316000E36BF /* RootNavigationController.h */,
+				BD20D73F20EC5316000E36BF /* RootNavigationController.m */,
+				BDA4076820EB696D00EC4791 /* ScanBookAppDelegate.h */,
+				BDA4076920EB696D00EC4791 /* ScanBookAppDelegate.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		BDA4075C20EB696D00EC4791 = {
 			isa = PBXGroup;
 			children = (
 				BDA4076720EB696D00EC4791 /* ScanBook */,
 				BDA4076620EB696D00EC4791 /* Products */,
+				BDA4079020EB84AA00EC4791 /* Images */,
+				3C5E86B329B08B8B66A3C4D4 /* Pods */,
+				F1DC943659E5529E69FD3F0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,17 +146,82 @@
 		BDA4076720EB696D00EC4791 /* ScanBook */ = {
 			isa = PBXGroup;
 			children = (
-				BDA4076820EB696D00EC4791 /* AppDelegate.h */,
-				BDA4076920EB696D00EC4791 /* AppDelegate.m */,
-				BDA4076B20EB696D00EC4791 /* ViewController.h */,
-				BDA4076C20EB696D00EC4791 /* ViewController.m */,
 				BDA4076E20EB696D00EC4791 /* Main.storyboard */,
+				BDA4078520EB7BDF00EC4791 /* Common */,
+				BDA4078120EB745600EC4791 /* Utility */,
+				BDA4077F20EB742000EC4791 /* Views */,
+				BD20D74420EC56D3000E36BF /* LeftSlider */,
+				BD20D74520EC56E3000E36BF /* RightSlider */,
+				BDA4078020EB744500EC4791 /* Controllers */,
+				BD20D76020ECBC0A000E36BF /* Main */,
 				BDA4077120EB696E00EC4791 /* Assets.xcassets */,
 				BDA4077320EB696E00EC4791 /* LaunchScreen.storyboard */,
 				BDA4077620EB696E00EC4791 /* Info.plist */,
 				BDA4077720EB696E00EC4791 /* main.m */,
 			);
 			path = ScanBook;
+			sourceTree = "<group>";
+		};
+		BDA4077F20EB742000EC4791 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BDA4078020EB744500EC4791 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BDA4078220EB747700EC4791 /* TutorialViewController.h */,
+				BDA4078320EB747700EC4791 /* TutorialViewController.m */,
+				BD20D74120EC542A000E36BF /* ScanBookViewController.h */,
+				BD20D74220EC542A000E36BF /* ScanBookViewController.m */,
+				BD20D76120ECBC3F000E36BF /* ScannerViewController.h */,
+				BD20D76220ECBC3F000E36BF /* ScannerViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BDA4078120EB745600EC4791 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				BD20D75820ECA991000E36BF /* UIColor+Utility.h */,
+				BD20D75920ECA991000E36BF /* UIColor+Utility.m */,
+				BD20D75D20ECB7EF000E36BF /* UIImage+Utility.h */,
+				BD20D75E20ECB7EF000E36BF /* UIImage+Utility.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		BDA4078520EB7BDF00EC4791 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BDA4078620EB7BF300EC4791 /* Define.h */,
+				BDA4078820EB7E4B00EC4791 /* ScanBook_Prefix.pch */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BDA4079020EB84AA00EC4791 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BD20D75B20ECB79C000E36BF /* home@2x.png */,
+				BD20D74D20EC82E8000E36BF /* edit@2x.png */,
+				BD20D74E20EC82E8000E36BF /* menu@2x.png */,
+				BD20D74C20EC82E7000E36BF /* plus@2x.png */,
+				BDA4079220EB84B300EC4791 /* checkbox_off@2x.png */,
+				BDA4079120EB84B300EC4791 /* checkbox_on@2x.png */,
+				BDA4079320EB84B300EC4791 /* close_round@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		F1DC943659E5529E69FD3F0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				127DE408B5E2A30B13B6A23A /* Pods_ScanBook.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDA4077B20EB696E00EC4791 /* Build configuration list for PBXNativeTarget "ScanBook" */;
 			buildPhases = (
+				7585C81496C680E5A2E036D2 /* [CP] Check Pods Manifest.lock */,
 				BDA4076120EB696D00EC4791 /* Sources */,
 				BDA4076220EB696D00EC4791 /* Frameworks */,
 				BDA4076320EB696D00EC4791 /* Resources */,
+				7D6758808B74CA398BEE04C3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,20 +285,74 @@
 			files = (
 				BDA4077520EB696E00EC4791 /* LaunchScreen.storyboard in Resources */,
 				BDA4077220EB696E00EC4791 /* Assets.xcassets in Resources */,
+				BDA4079420EB84B400EC4791 /* checkbox_on@2x.png in Resources */,
+				BD20D75C20ECB79C000E36BF /* home@2x.png in Resources */,
+				BD20D74F20EC82E8000E36BF /* plus@2x.png in Resources */,
+				BD20D75120EC82E8000E36BF /* menu@2x.png in Resources */,
+				BDA4079520EB84B400EC4791 /* checkbox_off@2x.png in Resources */,
+				BDA4079620EB84B400EC4791 /* close_round@2x.png in Resources */,
+				BD20D75020EC82E8000E36BF /* edit@2x.png in Resources */,
 				BDA4077020EB696D00EC4791 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7585C81496C680E5A2E036D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScanBook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D6758808B74CA398BEE04C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ScanBook/Pods-ScanBook-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LGSideMenuController/LGSideMenuController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGSideMenuController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScanBook/Pods-ScanBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BDA4076120EB696D00EC4791 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDA4076D20EB696D00EC4791 /* ViewController.m in Sources */,
+				BD20D74820EC570E000E36BF /* LeftViewController.m in Sources */,
+				BD20D74320EC542A000E36BF /* ScanBookViewController.m in Sources */,
+				BD20D75F20ECB7EF000E36BF /* UIImage+Utility.m in Sources */,
 				BDA4077820EB696E00EC4791 /* main.m in Sources */,
-				BDA4076A20EB696D00EC4791 /* AppDelegate.m in Sources */,
+				BDA4076A20EB696D00EC4791 /* ScanBookAppDelegate.m in Sources */,
+				BDA4078420EB747700EC4791 /* TutorialViewController.m in Sources */,
+				BD20D74020EC5316000E36BF /* RootNavigationController.m in Sources */,
+				BD20D74B20EC571B000E36BF /* RightViewController.m in Sources */,
+				BD20D75A20ECA991000E36BF /* UIColor+Utility.m in Sources */,
+				BD20D76320ECBC3F000E36BF /* ScannerViewController.m in Sources */,
+				BD20D73A20EC5023000E36BF /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,16 +490,19 @@
 		};
 		BDA4077C20EB696E00EC4791 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37381EB5626586199313D97B /* Pods-ScanBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7J75M9H3W;
+				GCC_PREFIX_HEADER = ScanBook/Common/ScanBook_Prefix.pch;
 				INFOPLIST_FILE = ScanBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sangchang.com.ScanBook;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.arirangtelecom.ScanBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,16 +510,19 @@
 		};
 		BDA4077D20EB696E00EC4791 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A0B189D4DDF414097916971 /* Pods-ScanBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7J75M9H3W;
+				GCC_PREFIX_HEADER = ScanBook/Common/ScanBook_Prefix.pch;
 				INFOPLIST_FILE = ScanBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sangchang.com.ScanBook;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.arirangtelecom.ScanBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

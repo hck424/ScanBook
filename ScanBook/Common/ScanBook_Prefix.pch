@@ -1,0 +1,15 @@
+//
+//  ScanBook_Prefix.pch
+//  ScanBook
+//
+//  Created by 학철 on 2018. 7. 3..
+//  Copyright © 2018년 학철. All rights reserved.
+//
+
+#ifndef ScanBook_Prefix_pch
+#define ScanBook_Prefix_pch
+
+#define RGB(r, g, b)[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define RGBA(r, g, b, a)[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+#endif /* ScanBook_Prefix_pch */

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ScanBookAppDelegate.h
 //  ScanBook
 //
 //  Created by 학철 on 2018. 7. 3..
@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ScanBookAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 
 @end

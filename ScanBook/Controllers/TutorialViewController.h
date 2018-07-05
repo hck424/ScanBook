@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  TutorialViewController.h
 //  ScanBook
 //
 //  Created by 학철 on 2018. 7. 3..
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface TutorialViewController : UIViewController
 
 @end
-

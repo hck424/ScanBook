@@ -1,25 +1,24 @@
 //
-//  AppDelegate.m
+//  ScanBookAppDelegate.m
 //  ScanBook
 //
 //  Created by 학철 on 2018. 7. 3..
 //  Copyright © 2018년 학철. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "ScanBookAppDelegate.h"
 
-@interface AppDelegate ()
+@interface ScanBookAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation ScanBookAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
