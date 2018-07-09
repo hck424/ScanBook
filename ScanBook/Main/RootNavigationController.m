@@ -8,6 +8,9 @@
 
 #import "RootNavigationController.h"
 #import "UIViewController+LGSideMenuController.h"
+#import "Utility.h"
+#import "Define.h"
+#import "ScanBookAppDelegate.h"
 
 @interface RootNavigationController ()
 
@@ -15,19 +18,44 @@
 
 @implementation RootNavigationController
 
-- (BOOL)shouldAutorotate {
-    return YES;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.navigationBarHidden = YES;
+    
 }
-- (BOOL)prefersStatusBarHidden {
-    return UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication.statusBarOrientation) && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    BOOL hasAd = [ScanBookAppDelegate sharedAppDelegate].hasAd;
+    
+    CGRect mainFrame = [Utility GetApplicationFrame];
+    if (hasAd) {
+        self.view.frame = CGRectMake(mainFrame.origin.x, mainFrame.origin.y, mainFrame.size.width, mainFrame.size.height - BANNER_HEIGHT);
+    }
+    else {
+        self.view.frame = mainFrame;
+    }
+
+    for (UIViewController *viewCon in self.viewControllers) {
+        viewCon.view.frame = self.view.frame;
+    }
+    
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleDefault;
-}
-
-- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
-    return self.sideMenuController.isRightViewVisible ? UIStatusBarAnimationSlide : UIStatusBarAnimationFade;
-}
+//- (BOOL)shouldAutorotate {
+//    return YES;
+//}
+//- (BOOL)prefersStatusBarHidden {
+//    return UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication.statusBarOrientation) && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;
+//}
+//
+//- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return UIStatusBarStyleDefault;
+//}
+//
+//- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+//    return self.sideMenuController.isRightViewVisible ? UIStatusBarAnimationSlide : UIStatusBarAnimationFade;
+//}
 
 @end

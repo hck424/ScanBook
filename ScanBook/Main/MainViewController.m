@@ -30,7 +30,6 @@
         // You can also find there all other properties
         
         // LGSideMenuController fully customizable from storyboard
-
         
     }
     else {
@@ -195,6 +194,7 @@
             break;
         }
     }
+    
 }
 
 - (void)leftViewWillLayoutSubviewsWithSize:(CGSize)size {

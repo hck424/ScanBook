@@ -7,6 +7,7 @@
 //
 
 #import "ScanBookAppDelegate.h"
+#import "Define.h"
 
 @interface ScanBookAppDelegate ()
 
@@ -14,10 +15,99 @@
 
 @implementation ScanBookAppDelegate
 
++ (ScanBookAppDelegate *)sharedAppDelegate {
+    return (ScanBookAppDelegate *)[UIApplication sharedApplication].delegate;
+}
+
+- (MainNavigationController *)GetMainNavigationController {
+    return self.mainNavigationController;
+}
+- (RootNavigationController *)GetRootNavigationController {
+    return self.rootNavigationController;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    BOOL tutorialShow = [[NSUserDefaults standardUserDefaults] boolForKey:TUTORIAL_SHOW];
+    if (tutorialShow == NO) {
+        TutorialViewController *tutorialVC = [storyboard instantiateViewControllerWithIdentifier:@"TutorialViewController"];
+        tutorialVC.view.frame = [Utility GetApplicationFrame];
+        tutorialVC.view.layer.borderColor = [UIColor redColor].CGColor;
+        tutorialVC.view.layer.borderWidth = 1.0f;
+        
+        
+        self.window.rootViewController = tutorialVC;
+        [self.window makeKeyAndVisible];
+    }
+    else {
+        [self startLaunch];
+    }
     return YES;
+}
+
+- (void)startLaunch {
+    NSLog(@"startLaunch");
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    self.mainNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"MainNavigationController"];
+    self.mainNavigationController.view.frame = [Utility GetApplicationFrame];
+    self.mainViewController = [_mainNavigationController viewControllers].firstObject;
+    
+    
+    [_mainViewController setupWithType:1];
+    
+    self.window.rootViewController.view.frame = [Utility GetApplicationFrame];
+    self.rootNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"RootNavigationController"];
+    [_mainViewController.view addSubview:_rootNavigationController.view];
+    _mainViewController.rootViewController = _rootNavigationController;
+    
+    
+    self.bannerViewController = [storyboard instantiateViewControllerWithIdentifier:@"BannerViewController"];
+    [self.mainViewController.view addSubview:_bannerViewController.view];
+    _bannerViewController.view.frame = CGRectZero;
+    _bannerViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+//    _mainNavigationController.view.layer.borderColor = [UIColor blueColor].CGColor;
+//    _mainNavigationController.view.layer.borderWidth = 1.0f;
+//
+//    _rootNavigationController.view.layer.borderColor = [UIColor purpleColor].CGColor;
+//    _rootNavigationController.view.layer.borderWidth = 1.0f;
+
+    
+    self.window.rootViewController = _mainNavigationController;
+    [self.window makeKeyAndVisible];
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.hasAd = YES;
+        [self.mainViewController.view bringSubviewToFront:self.bannerViewController.view];
+    });
+}
+
+- (void)setHasAd:(BOOL)hasAd {
+
+    if (_hasAd != hasAd) {
+        [self changeFrame:hasAd];
+    }
+    _hasAd = hasAd;
+
+}
+
+- (void)changeFrame:(BOOL)hasAd {
+    CGRect mainFrame = [Utility GetApplicationFrame];
+    if (hasAd) {
+        _bannerViewController.view.hidden = NO;
+        self.rootNavigationController.view.frame = CGRectMake(mainFrame.origin.x, mainFrame.origin.y, mainFrame.size.width, mainFrame.size.height - BANNER_HEIGHT);
+        _bannerViewController.view.frame = CGRectMake(mainFrame.origin.x, mainFrame.size.height - BANNER_HEIGHT, mainFrame.size.width, BANNER_HEIGHT);
+    }
+    else {
+        _bannerViewController.view.hidden = YES;
+        self.rootNavigationController.view.frame = mainFrame;
+        _bannerViewController.view.frame = CGRectZero;
+    }
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

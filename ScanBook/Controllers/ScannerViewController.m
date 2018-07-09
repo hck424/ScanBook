@@ -9,6 +9,7 @@
 #import "ScannerViewController.h"
 
 @interface ScannerViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnBack;
 
 @end
 
@@ -16,12 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+- (IBAction)onClickBtnAction:(id)sender {
+    if (sender == _btnBack) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

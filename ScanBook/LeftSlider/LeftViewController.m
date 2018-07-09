@@ -11,6 +11,9 @@
 #import "Define.h"
 #import "UIImage+Utility.h"
 #import "UIViewController+LGSideMenuController.h"
+#import "ScannerViewController.h"
+#import "MainViewController.h"
+#import "ScanBookAppDelegate.h"
 
 @interface LeftViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
@@ -18,18 +21,18 @@
 @property (strong, nonatomic) IBOutlet UIView *headerView;
 @property (strong, nonatomic) NSMutableArray *arrData;
 @property (strong, nonatomic) IBOutlet UIView *footerView;
+@property (strong, nonatomic) IBOutlet UIView *selectedBgView;
 @end
 
 @implementation LeftViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_btnHome setImage:[UIImage imageNamed:@"home" withTintColor:[UIColor colorOfHexColor:DEFAULT_COLOR_BLUE]] forState:UIControlStateNormal];
     
-    [_btnHome setImage:[UIImage imageNamed:@"home" withTintColor:RGB(0x15, 0x68, 0xf7)] forState:UIControlStateNormal];
     self.tblView.tableHeaderView = _headerView;
     _tblView.tableHeaderView.frame = CGRectMake(0, 0, _tblView.frame.size.width, 100);
     _tblView.tableFooterView.frame = CGRectMake(0, 0, _tblView.frame.size.width, 30);
-    
     
     self.arrData = [NSMutableArray array];
     [self makeData];
@@ -38,6 +41,7 @@
     
     self.tblView.delegate = self;
     self.tblView.dataSource = self;
+    
     
 }
 - (void)makeData {
@@ -73,6 +77,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.selectedBackgroundView = _selectedBgView;
     }
     NSString *txt = [[[_arrData objectAtIndex:indexPath.section] objectForKey:@"row"] objectAtIndex:indexPath.row];
     
@@ -97,7 +102,12 @@
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             NSLog(@"스캔");
-            
+            MainViewController *mainViewController = (MainViewController *)self.sideMenuController;
+//            UINavigationController *naviCtrl = (UINavigationController *)mainViewController.rootViewController;
+            ScannerViewController *viewCon = [self.storyboard instantiateViewControllerWithIdentifier:@"ScannerViewController"];
+            [[[ScanBookAppDelegate sharedAppDelegate] GetRootNavigationController] pushViewController:viewCon animated:YES];
+//            [naviCtrl setViewControllers:@[viewCon]];
+            [mainViewController hideLeftViewAnimated:YES completionHandler:nil];
         }
     }
     else if (indexPath.section == 1) {

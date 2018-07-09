@@ -20,6 +20,9 @@
 		BD20D75C20ECB79C000E36BF /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD20D75B20ECB79C000E36BF /* home@2x.png */; };
 		BD20D75F20ECB7EF000E36BF /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D75E20ECB7EF000E36BF /* UIImage+Utility.m */; };
 		BD20D76320ECBC3F000E36BF /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D76220ECBC3F000E36BF /* ScannerViewController.m */; };
+		BD5BBC6E20EE0BA600BCD973 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5BBC6D20EE0BA600BCD973 /* MainNavigationController.m */; };
+		BD5BCA9720F0A5F600FEC7FB /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5BCA9620F0A5F600FEC7FB /* BannerViewController.m */; };
+		BD5BCAA020F0ABB000FEC7FB /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5BCA9F20F0ABB000FEC7FB /* Utility.m */; };
 		BDA4076A20EB696D00EC4791 /* ScanBookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA4076920EB696D00EC4791 /* ScanBookAppDelegate.m */; };
 		BDA4077020EB696D00EC4791 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA4076E20EB696D00EC4791 /* Main.storyboard */; };
 		BDA4077220EB696E00EC4791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDA4077120EB696E00EC4791 /* Assets.xcassets */; };
@@ -29,6 +32,11 @@
 		BDA4079420EB84B400EC4791 /* checkbox_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDA4079120EB84B300EC4791 /* checkbox_on@2x.png */; };
 		BDA4079520EB84B400EC4791 /* checkbox_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDA4079220EB84B300EC4791 /* checkbox_off@2x.png */; };
 		BDA4079620EB84B400EC4791 /* close_round@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDA4079320EB84B300EC4791 /* close_round@2x.png */; };
+		BDEB564520F319F60046193E /* back_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDEB564320F319F60046193E /* back_blue@2x.png */; };
+		BDEB564620F319F60046193E /* back_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDEB564420F319F60046193E /* back_black@2x.png */; };
+		BDEB564820F31E830046193E /* scanner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDEB564720F31E820046193E /* scanner@2x.png */; };
+		BDEB564F20F3206B0046193E /* BookCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEB564D20F3206B0046193E /* BookCollectionViewCell.m */; };
+		BDEB565020F3206B0046193E /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDEB564E20F3206B0046193E /* BookCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +63,12 @@
 		BD20D75E20ECB7EF000E36BF /* UIImage+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utility.m"; sourceTree = "<group>"; };
 		BD20D76120ECBC3F000E36BF /* ScannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
 		BD20D76220ECBC3F000E36BF /* ScannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
+		BD5BBC6C20EE0BA600BCD973 /* MainNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
+		BD5BBC6D20EE0BA600BCD973 /* MainNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
+		BD5BCA9520F0A5F600FEC7FB /* BannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
+		BD5BCA9620F0A5F600FEC7FB /* BannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
+		BD5BCA9E20F0ABB000FEC7FB /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		BD5BCA9F20F0ABB000FEC7FB /* Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		BDA4076520EB696D00EC4791 /* ScanBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA4076820EB696D00EC4791 /* ScanBookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanBookAppDelegate.h; sourceTree = "<group>"; };
 		BDA4076920EB696D00EC4791 /* ScanBookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanBookAppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +84,12 @@
 		BDA4079120EB84B300EC4791 /* checkbox_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_on@2x.png"; sourceTree = "<group>"; };
 		BDA4079220EB84B300EC4791 /* checkbox_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_off@2x.png"; sourceTree = "<group>"; };
 		BDA4079320EB84B300EC4791 /* close_round@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_round@2x.png"; sourceTree = "<group>"; };
+		BDEB564320F319F60046193E /* back_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_blue@2x.png"; sourceTree = "<group>"; };
+		BDEB564420F319F60046193E /* back_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_black@2x.png"; sourceTree = "<group>"; };
+		BDEB564720F31E820046193E /* scanner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scanner@2x.png"; sourceTree = "<group>"; };
+		BDEB564C20F3206B0046193E /* BookCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCollectionViewCell.h; sourceTree = "<group>"; };
+		BDEB564D20F3206B0046193E /* BookCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookCollectionViewCell.m; sourceTree = "<group>"; };
+		BDEB564E20F3206B0046193E /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,12 +136,32 @@
 			children = (
 				BD20D73820EC5023000E36BF /* MainViewController.h */,
 				BD20D73920EC5023000E36BF /* MainViewController.m */,
+				BD5BBC6C20EE0BA600BCD973 /* MainNavigationController.h */,
+				BD5BBC6D20EE0BA600BCD973 /* MainNavigationController.m */,
 				BD20D73E20EC5316000E36BF /* RootNavigationController.h */,
 				BD20D73F20EC5316000E36BF /* RootNavigationController.m */,
 				BDA4076820EB696D00EC4791 /* ScanBookAppDelegate.h */,
 				BDA4076920EB696D00EC4791 /* ScanBookAppDelegate.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		BD5BCA9920F0A65600FEC7FB /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				BDA4078220EB747700EC4791 /* TutorialViewController.h */,
+				BDA4078320EB747700EC4791 /* TutorialViewController.m */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
+		BD5BCA9A20F0A66E00FEC7FB /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				BD5BCA9520F0A5F600FEC7FB /* BannerViewController.h */,
+				BD5BCA9620F0A5F600FEC7FB /* BannerViewController.m */,
+			);
+			path = Banner;
 			sourceTree = "<group>";
 		};
 		BDA4075C20EB696D00EC4791 = {
@@ -165,6 +205,9 @@
 		BDA4077F20EB742000EC4791 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BDEB564C20F3206B0046193E /* BookCollectionViewCell.h */,
+				BDEB564D20F3206B0046193E /* BookCollectionViewCell.m */,
+				BDEB564E20F3206B0046193E /* BookCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,8 +215,8 @@
 		BDA4078020EB744500EC4791 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BDA4078220EB747700EC4791 /* TutorialViewController.h */,
-				BDA4078320EB747700EC4791 /* TutorialViewController.m */,
+				BD5BCA9920F0A65600FEC7FB /* Tutorial */,
+				BD5BCA9A20F0A66E00FEC7FB /* Banner */,
 				BD20D74120EC542A000E36BF /* ScanBookViewController.h */,
 				BD20D74220EC542A000E36BF /* ScanBookViewController.m */,
 				BD20D76120ECBC3F000E36BF /* ScannerViewController.h */,
@@ -189,6 +232,8 @@
 				BD20D75920ECA991000E36BF /* UIColor+Utility.m */,
 				BD20D75D20ECB7EF000E36BF /* UIImage+Utility.h */,
 				BD20D75E20ECB7EF000E36BF /* UIImage+Utility.m */,
+				BD5BCA9E20F0ABB000FEC7FB /* Utility.h */,
+				BD5BCA9F20F0ABB000FEC7FB /* Utility.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -205,6 +250,9 @@
 		BDA4079020EB84AA00EC4791 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BDEB564720F31E820046193E /* scanner@2x.png */,
+				BDEB564420F319F60046193E /* back_black@2x.png */,
+				BDEB564320F319F60046193E /* back_blue@2x.png */,
 				BD20D75B20ECB79C000E36BF /* home@2x.png */,
 				BD20D74D20EC82E8000E36BF /* edit@2x.png */,
 				BD20D74E20EC82E8000E36BF /* menu@2x.png */,
@@ -283,7 +331,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDEB564820F31E830046193E /* scanner@2x.png in Resources */,
 				BDA4077520EB696E00EC4791 /* LaunchScreen.storyboard in Resources */,
+				BDEB564520F319F60046193E /* back_blue@2x.png in Resources */,
 				BDA4077220EB696E00EC4791 /* Assets.xcassets in Resources */,
 				BDA4079420EB84B400EC4791 /* checkbox_on@2x.png in Resources */,
 				BD20D75C20ECB79C000E36BF /* home@2x.png in Resources */,
@@ -293,6 +343,8 @@
 				BDA4079620EB84B400EC4791 /* close_round@2x.png in Resources */,
 				BD20D75020EC82E8000E36BF /* edit@2x.png in Resources */,
 				BDA4077020EB696D00EC4791 /* Main.storyboard in Resources */,
+				BDEB564620F319F60046193E /* back_black@2x.png in Resources */,
+				BDEB565020F3206B0046193E /* BookCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,9 +396,13 @@
 			files = (
 				BD20D74820EC570E000E36BF /* LeftViewController.m in Sources */,
 				BD20D74320EC542A000E36BF /* ScanBookViewController.m in Sources */,
+				BD5BBC6E20EE0BA600BCD973 /* MainNavigationController.m in Sources */,
 				BD20D75F20ECB7EF000E36BF /* UIImage+Utility.m in Sources */,
 				BDA4077820EB696E00EC4791 /* main.m in Sources */,
+				BDEB564F20F3206B0046193E /* BookCollectionViewCell.m in Sources */,
 				BDA4076A20EB696D00EC4791 /* ScanBookAppDelegate.m in Sources */,
+				BD5BCA9720F0A5F600FEC7FB /* BannerViewController.m in Sources */,
+				BD5BCAA020F0ABB000FEC7FB /* Utility.m in Sources */,
 				BDA4078420EB747700EC4791 /* TutorialViewController.m in Sources */,
 				BD20D74020EC5316000E36BF /* RootNavigationController.m in Sources */,
 				BD20D74B20EC571B000E36BF /* RightViewController.m in Sources */,
