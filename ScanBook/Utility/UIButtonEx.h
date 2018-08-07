@@ -1,5 +1,5 @@
 //
-//  BookCollectionViewCell.h
+//  UIButtonEx.h
 //  ScanBook
 //
 //  Created by 학철 on 2018. 7. 10..
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BookCollectionViewCell : UICollectionViewCell
+@interface UIButtonEx : UIButton
 
 @end
