@@ -19,4 +19,13 @@
     }
     return [[UIScreen mainScreen] bounds];
 }
+
++ (CGRect)GetApplicationSafeArea {
+    if (@available(ios 11.0, *)) {
+        UILayoutGuide *guide = [ScanBookAppDelegate sharedAppDelegate].window.safeAreaLayoutGuide;
+        return [guide layoutFrame];
+    }
+    return [[UIScreen mainScreen] bounds];
+
+}
 @end

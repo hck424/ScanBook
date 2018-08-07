@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface BookInfo : NSObject
-
+@property (nonatomic, strong) NSString *bookId;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *createDate;
 @end

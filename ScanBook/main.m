@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ScanBookAppDelegate.h"
-
+void uncaughtException(NSException *exception) {
+    NSLog(@"exception : %@", [exception callStackSymbols]);
+}
 int main(int argc, char * argv[]) {
     @autoreleasepool {
+        NSSetUncaughtExceptionHandler(uncaughtException);
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([ScanBookAppDelegate class]));
     }
 }

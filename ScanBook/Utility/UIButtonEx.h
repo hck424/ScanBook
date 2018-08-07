@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIButtonEx : UIButton
-
+@property (nonatomic, assign) NSInteger idx;
+@property (nonatomic, strong) id data;
 @end

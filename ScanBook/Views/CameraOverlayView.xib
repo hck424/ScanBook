@@ -18,68 +18,82 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMK-KS-5QI" userLabel="ContainerView">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
-                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8B-Wc-c1K">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-Wf-KGd">
+                            <rect key="frame" x="5" y="5" width="365" height="593"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Md6-M4-MhL">
                             <rect key="frame" x="0.0" y="603" width="375" height="44"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gPT-UW-obZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvU-WU-7nI">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="44"/>
+                                            <state key="normal" image="undo.png"/>
+                                            <connections>
+                                                <action selector="onClickButtonAcion:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZiM-EF-EV5"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwB-pe-h4T">
+                                            <rect key="frame" x="125" y="0.0" width="125" height="44"/>
+                                            <state key="normal" image="screenshot.png"/>
+                                            <connections>
+                                                <action selector="onClickButtonAcion:" destination="iN0-l3-epB" eventType="touchUpInside" id="D7A-v7-He3"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvr-PD-6Je">
+                                            <rect key="frame" x="250" y="0.0" width="125" height="44"/>
+                                            <state key="normal" image="timer_0.png"/>
+                                            <connections>
+                                                <action selector="onClickButtonAcion:" destination="iN0-l3-epB" eventType="touchUpInside" id="cMT-sy-WUJ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="44" id="H4c-hx-3Nj"/>
+                                <constraint firstItem="gPT-UW-obZ" firstAttribute="leading" secondItem="Md6-M4-MhL" secondAttribute="leading" id="6Ye-hQ-JHJ"/>
+                                <constraint firstAttribute="trailing" secondItem="gPT-UW-obZ" secondAttribute="trailing" id="99B-87-cl8"/>
+                                <constraint firstItem="gPT-UW-obZ" firstAttribute="top" secondItem="Md6-M4-MhL" secondAttribute="top" id="ORf-sZ-zUC"/>
+                                <constraint firstAttribute="height" constant="44" id="x7V-tu-xw2"/>
+                                <constraint firstAttribute="bottom" secondItem="gPT-UW-obZ" secondAttribute="bottom" id="yJx-ka-u3H"/>
                             </constraints>
-                            <items>
-                                <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="S3X-1W-8Ff"/>
-                                <barButtonItem image="undo.png" landscapeImage="undo_h.png" id="JTj-md-LgZ">
-                                    <connections>
-                                        <action selector="barBtnDone:" destination="iN0-l3-epB" id="DiP-2V-1IX"/>
-                                    </connections>
-                                </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="PlO-vH-sgz"/>
-                                <barButtonItem image="screenshot.png" landscapeImage="screenshot_h.png" id="Rrl-0N-CEX">
-                                    <connections>
-                                        <action selector="barBtnDone:" destination="iN0-l3-epB" id="rCp-6g-dUY"/>
-                                    </connections>
-                                </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="t2v-xY-H5X"/>
-                                <barButtonItem image="timer_0.png" id="gx5-8A-eYp">
-                                    <connections>
-                                        <action selector="barBtnDone:" destination="iN0-l3-epB" id="cp2-xV-ozt"/>
-                                    </connections>
-                                </barButtonItem>
-                                <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="cTk-Fn-hCX"/>
-                            </items>
-                        </toolbar>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="l8B-Wc-c1K" firstAttribute="leading" secondItem="yMK-KS-5QI" secondAttribute="leading" id="J8k-bh-bRD"/>
-                        <constraint firstAttribute="trailing" secondItem="l8B-Wc-c1K" secondAttribute="trailing" id="KeD-eB-mfW"/>
-                        <constraint firstAttribute="bottom" secondItem="l8B-Wc-c1K" secondAttribute="bottom" id="Pdj-CF-raZ"/>
+                        <constraint firstAttribute="trailing" secondItem="Md6-M4-MhL" secondAttribute="trailing" id="GPK-cY-BRe"/>
+                        <constraint firstAttribute="bottom" secondItem="Md6-M4-MhL" secondAttribute="bottom" id="LJZ-JC-TOO"/>
+                        <constraint firstItem="aw9-Wf-KGd" firstAttribute="top" secondItem="yMK-KS-5QI" secondAttribute="top" constant="5" id="PxL-1D-XsA"/>
+                        <constraint firstItem="Md6-M4-MhL" firstAttribute="leading" secondItem="yMK-KS-5QI" secondAttribute="leading" id="RKx-Am-7a3"/>
+                        <constraint firstAttribute="trailing" secondItem="aw9-Wf-KGd" secondAttribute="trailing" constant="5" id="VVL-Mi-dIy"/>
+                        <constraint firstItem="aw9-Wf-KGd" firstAttribute="leading" secondItem="yMK-KS-5QI" secondAttribute="leading" constant="5" id="tRV-2h-v9i"/>
+                        <constraint firstItem="Md6-M4-MhL" firstAttribute="top" secondItem="aw9-Wf-KGd" secondAttribute="bottom" constant="5" id="wWA-z3-aEY"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="yMK-KS-5QI" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="7Xy-WS-gQ6"/>
-                <constraint firstItem="yMK-KS-5QI" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="8B8-7o-Rbt"/>
-                <constraint firstItem="yMK-KS-5QI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MET-JU-Jbg"/>
-                <constraint firstItem="yMK-KS-5QI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="NSh-3d-Lzk"/>
-                <constraint firstItem="yMK-KS-5QI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="gHt-TX-RFr"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="yMK-KS-5QI" secondAttribute="bottom" id="pIM-xW-1Ta"/>
-                <constraint firstItem="yMK-KS-5QI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="zHx-bW-Jcq"/>
-                <constraint firstItem="yMK-KS-5QI" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="zyf-q5-Tg7"/>
+                <constraint firstItem="yMK-KS-5QI" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Mun-L6-0Ml"/>
+                <constraint firstItem="yMK-KS-5QI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="P0B-tf-Uf8"/>
+                <constraint firstItem="yMK-KS-5QI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Ss9-Qz-UNX"/>
+                <constraint firstItem="yMK-KS-5QI" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="chL-qj-oWk"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="btnShot" destination="Rrl-0N-CEX" id="Re3-Lg-KTd"/>
-                <outlet property="btnTimer" destination="gx5-8A-eYp" id="sA8-3a-EXe"/>
-                <outlet property="btnUndo" destination="JTj-md-LgZ" id="yzS-1p-k6b"/>
-                <outlet property="toolBar" destination="l8B-Wc-c1K" id="xaA-rH-Are"/>
+                <outlet property="btnShot" destination="QwB-pe-h4T" id="cVg-K5-hFG"/>
+                <outlet property="btnTimer" destination="vvr-PD-6Je" id="ZfG-f4-bzr"/>
+                <outlet property="btnUndo" destination="JvU-WU-7nI" id="ipf-pp-ypm"/>
+                <outlet property="toolBarView" destination="Md6-M4-MhL" id="28O-sq-AQV"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
     <resources>
         <image name="screenshot.png" width="25" height="25"/>
-        <image name="screenshot_h.png" width="25" height="25"/>
         <image name="timer_0.png" width="25" height="25"/>
         <image name="undo.png" width="25" height="25"/>
-        <image name="undo_h.png" width="25" height="25"/>
     </resources>
 </document>

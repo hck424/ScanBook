@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BookInfo.h"
+typedef NS_ENUM(NSInteger, CELL_TYPE)  {
+    CELL_TYPE_EMPTY,
+    CELL_TYPE_NORMAL
+};
+
 
 @interface BookCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *ivBook;
+@property (weak, nonatomic) IBOutlet UILabel *lbTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lbDate;
 
+
+- (void)configurationWidthData:(BookInfo *)bookInfo cellType:(CELL_TYPE)cellType;
 @end

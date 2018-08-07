@@ -11,4 +11,5 @@
 
 @interface Utility : NSObject
 + (CGRect)GetApplicationFrame;
++ (CGRect)GetApplicationSafeArea;
 @end

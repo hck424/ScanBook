@@ -7,31 +7,64 @@
 //
 
 #import "ScanImagePickerController.h"
+#import "Utility.h"
 
 @interface ScanImagePickerController ()
 
 @end
 
 @implementation ScanImagePickerController
-
+- (instancetype) init {
+    if (self = [super init]) {
+        [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    self.view.frame = [Utility GetApplicationSafeArea];
+    self.cameraOverlayView.frame = self.view.bounds;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (BOOL)shouldAutorotate {
+    return NO;
 }
-*/
 
+- (UIInterfaceOrientationMask) supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscape;
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)orientationChange:(NSNotification *)noti {
+    
+    if (self.sourceType == UIImagePickerControllerSourceTypeCamera) {
+//        self.cameraOverlayView.frame = self.view.safeAreaLayoutGuide.layoutFrame;
+        //        UIEdgeInsets saftInset = self.view.safeAreaInsets;
+        //        NSArray *constraint = self.cameraOverlayView.constraints;
+        //        for (NSLayoutConstraint *con in constraint) {
+        //            if ([con.identifier isEqualToString:@"overlayViewBottom"]) {
+        //                con.constant = saftInset.bottom;
+        //            }
+        //        }
+    }
+    if ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationLandscapeLeft
+        || [[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationLandscapeRight) {
+        // Landscape
+        NSLog(@"===== Landscape");
+        
+    } else {
+        // Portrait
+        NSLog(@"===== Portrait");
+        
+    }
+}
 @end

@@ -12,19 +12,22 @@ typedef NS_ENUM(NSUInteger, CAMERAOVERAY_VIEW_TYPE) {
     CAMERAOVERAY_VIEW_TYPE_SINGLE,
     CAMERAOVERAY_VIEW_TYPE_DOUBLE
 };
-
+typedef NS_ENUM(NSUInteger, CAMERAOVERAY_BUTTON_TYPE) {
+    CAMERAOVERAY_BUTTON_TYPE_UNDO,
+    CAMERAOVERAY_BUTTON_TYPE_SHOT,
+    CAMERAOVERAY_BUTTON_TYPE_TIMER
+};
 @protocol CameraOverlayViewDelegate <NSObject >
-
+- (void)carmeraOverayViewOnClickedAction:(id)carmeraOverayView btnType:(CAMERAOVERAY_BUTTON_TYPE)btnType data:(id)data;
 @end
 @interface CameraOverlayView : UIView
 
-@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnUndo;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnShot;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnTimer;
+@property (weak, nonatomic) IBOutlet UIView *toolBarView;
+@property (weak, nonatomic) IBOutlet UIButton *btnUndo;
+@property (weak, nonatomic) IBOutlet UIButton *btnShot;
+@property (weak, nonatomic) IBOutlet UIButton *btnTimer;
 @property (assign, nonatomic) CAMERAOVERAY_VIEW_TYPE type;
 
-@property (nonatomic, copy) void (^carmeraOverayViewBtnAction) (id sender, NSInteger btnIdx);
-- (void)setCarmeraOverayViewBtnAction:(void (^)(id sender, NSInteger btnIndex))carmeraOverayViewBtnAction;
+@property (weak, nonatomic) id <CameraOverlayViewDelegate> delegate;
 
 @end
