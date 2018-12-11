@@ -7,17 +7,15 @@
 //
 
 #import "ShapeView.h"
-#define BTN_WIDTH 15.0
-#define RGB(r, g, b)[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
-#define RGBA(r, g, b, a)[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#import "Define.h"
+
+#define BTN_WIDTH 40
 
 @interface ShapeView ()
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *arrButton;
-@property (strong, nonatomic) NSMutableArray *arrPoint;
 @property (strong, nonatomic) NSMutableArray *arrPointOrg;
 @property (weak, nonatomic) IBOutlet UIView *seperatorView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintSeperatorHeight;
 
 @end
 
@@ -29,28 +27,32 @@
     }
     return self;
 }
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        [self xibSetup];
-    }
-    
-    return self;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self xibSetup];
+    NSLog(@"hck: awakeFromNib");
 }
+//- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+//    if (self = [super initWithCoder:aDecoder]) {
+//        [self xibSetup];
+//        NSLog(@"hck: initWithCoder");
+//    }
+//
+//    return self;
+//}
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    NSLog(@"draw rect");
     
-    if (_arrPointOrg == nil) {
-        self.arrPointOrg = [NSMutableArray array];
-        for (UIButton *btn in _arrButton) {
-            [_arrPointOrg addObject:[NSValue valueWithCGPoint:btn.center]];
-        }
-        self.arrPoint = [_arrPointOrg mutableCopy];
+    static NSInteger i;
+    NSLog(@"hck: draw rect %ld", i++);
+    
+    if (_arrPoint == nil) {
+        return;
     }
+    
     CGContextRef ctxt = UIGraphicsGetCurrentContext();
 
-    CGContextSetFillColorWithColor(ctxt, RGBA(0x00, 0x00, 0x0, 0.2).CGColor);
+    CGContextSetFillColorWithColor(ctxt, RGBA(0x00, 0x00, 0x0, 0.5).CGColor);
     CGContextFillRect(ctxt, rect);
     
     CGMutablePathRef path = CGPathCreateMutable();
@@ -73,45 +75,107 @@
     CGContextClearRect(ctxt, rect);
     CGContextSetFillColorWithColor(ctxt, [UIColor clearColor].CGColor);
 
+
     CGContextAddPath(ctxt, path);
-    CGContextSetStrokeColorWithColor(ctxt, RGB(0x11, 0x80, 0xff).CGColor);
+    CGContextSetStrokeColorWithColor(ctxt, DEFAULT_COLOR_BLUE.CGColor);
     CGContextSetLineWidth(ctxt, 2.0);
     CGContextDrawPath(ctxt, kCGPathEOFillStroke);
     
 }
 - (void)xibSetup {
     
-    self.cliperType = CLIPER_TYPE_DOUBLE;
+    self.cliperType = CLIPER_TYPE_SINGLE;
     
     UIView *view = [[NSBundle bundleForClass:[self class]] loadNibNamed:@"ShapeView" owner:self options:nil].firstObject;
     [self addSubview:view];
     view.frame = self.bounds;
+    self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
     
     self.arrButton = [_arrButton sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"tag" ascending:YES]]];
-    [self layoutIfNeeded];
 
     for (UIButton *btn in _arrButton) {
+        btn.frame = CGRectMake(0, 0, BTN_WIDTH, BTN_WIDTH);
         [self addPanGesture:btn];
     }
 
-    _seperatorView.hidden = YES;
-    if (_cliperType == CLIPER_TYPE_DOUBLE) {
-        _seperatorView.hidden = NO;
-        _seperatorView.backgroundColor = RGBA(0x00, 0x00, 0x0, 0.2);
-        _seperatorView.layer.borderColor = RGB(0x11, 0x80, 0xff).CGColor;
-        _seperatorView.layer.borderWidth = 1.0f;
+    
+//    [self refreshClipView];
 
+}
+- (void)refreshViews {
+    
+    if (_arrPointOrg == nil) {
+        self.arrPointOrg = [NSMutableArray array];
+        
         for (UIButton *btn in _arrButton) {
+            CGFloat posX = 0.0;
+            CGFloat posY = 0.0;
+            
+            if (btn.tag == 100 || btn.tag == 106 || btn.tag == 107) {
+                posX = btn.frame.size.width/2;
+            } else if (btn.tag == 101 || btn.tag == 105) {
+                posX = self.frame.size.width / 2;
+            } else {
+                posX = self.frame.size.width - btn.frame.size.width/2;
+            }
+            
+            if (btn.tag == 100 || btn.tag == 101 || btn.tag == 102) {
+                posY = btn.frame.size.height / 2;
+            } else if (btn.tag == 103 || btn.tag == 107) {
+                posY = self.frame.size.height / 2;
+            } else {
+                posY = self.frame.size.height - btn.frame.size.height /2;
+            }
+            
+            CGPoint point = CGPointMake(posX, posY);
+            [_arrPointOrg addObject:[NSValue valueWithCGPoint:point]];
+        }
+    }
+    
+    
+    self.arrPoint = [NSMutableArray arrayWithArray:_arrPointOrg];
+    
+    if (_cliperType == CLIPER_TYPE_SINGLE) {
+        _seperatorView.hidden = YES;
+        _heightSeperator = 0.0;
+        
+        for (NSInteger i = 0; i < _arrButton.count; i++) {
+            UIButton *btn = [_arrButton objectAtIndex:i];
+            btn.hidden = NO;
+            if (_arrPoint != nil) {
+                btn.center = [[_arrPoint objectAtIndex:i] CGPointValue];
+            }
+        }
+    }
+    else if (_cliperType == CLIPER_TYPE_DOUBLE) {
+        _seperatorView.hidden = NO;
+        _seperatorView.backgroundColor = RGBA(0x00, 0x00, 0x00, 0.5);
+        _seperatorView.layer.borderColor = DEFAULT_COLOR_BLUE.CGColor;
+        _seperatorView.layer.borderWidth = 1.0f;
+        
+        _seperatorView.frame = CGRectMake(BTN_WIDTH/2,
+                                          (self.frame.size.height - 20)/2,
+                                          self.frame.size.width - BTN_WIDTH,
+                                          20.0);
+        
+        for (NSInteger i = 0; i < _arrButton.count; i++) {
+            UIButton *btn = [_arrButton objectAtIndex:i];
+            
             NSInteger targetIndex = btn.tag - 100;
             if (targetIndex % 2 == 0) {
                 btn.hidden = YES;
             }
+            if (_arrPoint != nil) {
+                btn.center = [[_arrPoint objectAtIndex:i] CGPointValue];
+            }
         }
+        _heightSeperator = _seperatorView.frame.size.height;
     }
     
     [self drawingPolygon];
 }
-
 - (void)addPanGesture:(UIView *)view {
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPan:)];
     [view addGestureRecognizer:panGesture];
@@ -257,7 +321,6 @@
                 btn4.center = tPoint2;
                 
             }
-            
         }
         else if (_cliperType == CLIPER_TYPE_DOUBLE) {
             
@@ -352,17 +415,17 @@
 - (CGPoint)bounderCheckPoint:(CGPoint)point {
     
     CGPoint transPoint = point;
-    if (transPoint.x + BTN_WIDTH > self.frame.size.width) {
-        transPoint.x = self.frame.size.width - BTN_WIDTH;
-    } else if (transPoint.x - BTN_WIDTH < 0) {
-        transPoint.x = BTN_WIDTH;
+    if (transPoint.x + BTN_WIDTH/2 > self.frame.size.width) {
+        transPoint.x = self.frame.size.width - BTN_WIDTH/2;
+    } else if (transPoint.x - BTN_WIDTH/2 < 0) {
+        transPoint.x = BTN_WIDTH/2;
     }
     
-    if (transPoint.y + BTN_WIDTH > self.frame.size.height) {
-        transPoint.y = self.frame.size.height - BTN_WIDTH;
+    if (transPoint.y + BTN_WIDTH/2 > self.frame.size.height) {
+        transPoint.y = self.frame.size.height - BTN_WIDTH/2;
     }
-    else if (transPoint.y - BTN_WIDTH < 0) {
-        transPoint.y = BTN_WIDTH;
+    else if (transPoint.y - BTN_WIDTH/2 < 0) {
+        transPoint.y = BTN_WIDTH/2;
     }
     return transPoint;
 }
@@ -376,6 +439,8 @@
             heightSeperatorView = 10;
         }
         _seperatorView.frame = CGRectMake(_seperatorView.frame.origin.x, (self.frame.size.height - heightSeperatorView)/2, _seperatorView.frame.size.width, heightSeperatorView);
+        
+        _heightSeperator = _seperatorView.frame.size.height;
     }
 }
 - (void)drawingPolygon {

@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 IB_DESIGNABLE
+
 typedef enum {
     CLIPER_TYPE_SINGLE,
     CLIPER_TYPE_DOUBLE
 } CLIPER_TYPE;
+
 @interface ShapeView : UIView
 @property (assign, nonatomic) CLIPER_TYPE cliperType;
+@property (strong, nonatomic) NSMutableArray *arrPoint;
+@property (assign, nonatomic) CGFloat heightSeperator;
+- (void)refreshViews;
 @end

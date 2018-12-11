@@ -7,18 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShapeView.h"
 
-typedef NS_ENUM(NSUInteger, CAMERAOVERAY_VIEW_TYPE) {
-    CAMERAOVERAY_VIEW_TYPE_SINGLE,
-    CAMERAOVERAY_VIEW_TYPE_DOUBLE
-};
+IB_DESIGNABLE
+
 typedef NS_ENUM(NSUInteger, CAMERAOVERAY_BUTTON_TYPE) {
     CAMERAOVERAY_BUTTON_TYPE_UNDO,
     CAMERAOVERAY_BUTTON_TYPE_SHOT,
-    CAMERAOVERAY_BUTTON_TYPE_TIMER
+    CAMERAOVERAY_BUTTON_TYPE_TIMER,
+    CAMERAOVERAY_BUTTON_TYPE_MODE
 };
 @protocol CameraOverlayViewDelegate <NSObject >
-- (void)carmeraOverayViewOnClickedAction:(id)carmeraOverayView btnType:(CAMERAOVERAY_BUTTON_TYPE)btnType data:(id)data;
+- (void)carmeraOverayViewOnClickedButtonAction:(CAMERAOVERAY_BUTTON_TYPE)btnType userInfo:(NSDictionary *)userInfo;
 @end
 @interface CameraOverlayView : UIView
 
@@ -26,8 +26,11 @@ typedef NS_ENUM(NSUInteger, CAMERAOVERAY_BUTTON_TYPE) {
 @property (weak, nonatomic) IBOutlet UIButton *btnUndo;
 @property (weak, nonatomic) IBOutlet UIButton *btnShot;
 @property (weak, nonatomic) IBOutlet UIButton *btnTimer;
-@property (assign, nonatomic) CAMERAOVERAY_VIEW_TYPE type;
+@property (weak, nonatomic) IBOutlet UIButton *btnPage;
+@property (weak, nonatomic) IBOutlet ShapeView *shapeView;
+@property (weak, nonatomic) IBOutlet UILabel *lbTime;
 
+- (void)refreshButtonImage;
 @property (weak, nonatomic) id <CameraOverlayViewDelegate> delegate;
 
 @end

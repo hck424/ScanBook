@@ -26,7 +26,7 @@
 @property (assign, nonatomic) BOOL hasAd;
 - (void)startLaunch;
 + (ScanBookAppDelegate *)sharedAppDelegate;
-- (MainNavigationController *)GetMainNavigationController;
-- (RootNavigationController *)GetRootNavigationController;
+- (MainNavigationController *)getMainNavigationController;
+- (RootNavigationController *)getRootNavigationController;
 @end
 

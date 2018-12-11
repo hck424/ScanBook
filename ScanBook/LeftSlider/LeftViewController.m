@@ -11,7 +11,6 @@
 #import "Define.h"
 #import "UIImage+Utility.h"
 #import "UIViewController+LGSideMenuController.h"
-#import "ScannerViewController.h"
 #import "MainViewController.h"
 #import "ScanBookAppDelegate.h"
 
@@ -28,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_btnHome setImage:[UIImage imageNamed:@"home" withTintColor:[UIColor colorOfHexColor:DEFAULT_COLOR_BLUE]] forState:UIControlStateNormal];
+    [_btnHome setImage:[UIImage imageNamed:@"home" withTintColor:DEFAULT_COLOR_BLUE] forState:UIControlStateNormal];
     
     self.tblView.tableHeaderView = _headerView;
     _tblView.tableHeaderView.frame = CGRectMake(0, 0, _tblView.frame.size.width, 100);
@@ -102,12 +101,14 @@
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             NSLog(@"스캔");
-            MainViewController *mainViewController = (MainViewController *)self.sideMenuController;
-//            UINavigationController *naviCtrl = (UINavigationController *)mainViewController.rootViewController;
-            ScannerViewController *viewCon = [self.storyboard instantiateViewControllerWithIdentifier:@"ScannerViewController"];
-            [[[ScanBookAppDelegate sharedAppDelegate] GetRootNavigationController] pushViewController:viewCon animated:YES];
-//            [naviCtrl setViewControllers:@[viewCon]];
-            [mainViewController hideLeftViewAnimated:YES completionHandler:nil];
+            
+//            MainViewController *mainViewController = (MainViewController *)self.sideMenuController;
+////            UINavigationController *naviCtrl = (UINavigationController *)mainViewController.rootViewController;
+//            ScannerViewController *viewCon = [self.storyboard instantiateViewControllerWithIdentifier:@"ScannerViewController"];
+//            [[[ScanBookAppDelegate sharedAppDelegate] GetRootNavigationController] pushViewController:viewCon animated:YES];
+////            [naviCtrl setViewControllers:@[viewCon]];
+//            [mainViewController hideLeftViewAnimated:YES completionHandler:nil];
+            
         }
     }
     else if (indexPath.section == 1) {

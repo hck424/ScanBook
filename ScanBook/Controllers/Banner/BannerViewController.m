@@ -27,7 +27,7 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    CGRect mainFrame = [Utility GetApplicationFrame];
+    CGRect mainFrame = [Utility getApplicationFrame];
     if ([ScanBookAppDelegate sharedAppDelegate].hasAd) {
         self.view.hidden = NO;
         self.view.frame = CGRectMake(mainFrame.origin.x, mainFrame.size.height - BANNER_HEIGHT, mainFrame.size.width, BANNER_HEIGHT);

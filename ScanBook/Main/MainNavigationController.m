@@ -18,12 +18,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationBarHidden = YES;
+
 }
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    self.view.frame = [Utility GetApplicationFrame];
+//    self.view.frame = [Utility getApplicationSafeArea];
+    self.view.frame = [UIScreen mainScreen].bounds;
     self.viewControllers.firstObject.view.frame = self.view.bounds;
+//    self.view.layer.borderWidth = 1.0f;
+//    self.view.layer.borderColor = [UIColor blueColor].CGColor;
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

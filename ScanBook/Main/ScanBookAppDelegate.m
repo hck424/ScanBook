@@ -19,10 +19,10 @@
     return (ScanBookAppDelegate *)[UIApplication sharedApplication].delegate;
 }
 
-- (MainNavigationController *)GetMainNavigationController {
+- (MainNavigationController *)getMainNavigationController {
     return self.mainNavigationController;
 }
-- (RootNavigationController *)GetRootNavigationController {
+- (RootNavigationController *)getRootNavigationController {
     return self.rootNavigationController;
 }
 
@@ -33,7 +33,7 @@
     BOOL tutorialShow = [[NSUserDefaults standardUserDefaults] boolForKey:TUTORIAL_SHOW];
     if (tutorialShow == NO) {
         TutorialViewController *tutorialVC = [storyboard instantiateViewControllerWithIdentifier:@"TutorialViewController"];
-        tutorialVC.view.frame = [Utility GetApplicationFrame];
+        tutorialVC.view.frame = [Utility getApplicationSafeArea];
         tutorialVC.view.layer.borderColor = [UIColor redColor].CGColor;
         tutorialVC.view.layer.borderWidth = 1.0f;
         
@@ -53,13 +53,14 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     self.mainNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"MainNavigationController"];
-    self.mainNavigationController.view.frame = [Utility GetApplicationFrame];
+//    self.mainNavigationController.view.frame = [Utility getApplicationSafeArea];
     self.mainViewController = [_mainNavigationController viewControllers].firstObject;
     
     
     [_mainViewController setupWithType:1];
     
-    self.window.rootViewController.view.frame = [Utility GetApplicationFrame];
+//    self.window.rootViewController.view.frame = [Utility getApplicationSafeArea];
+    
     self.rootNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"RootNavigationController"];
     [_mainViewController.view addSubview:_rootNavigationController.view];
     _mainViewController.rootViewController = _rootNavigationController;
@@ -96,7 +97,7 @@
 }
 
 - (void)changeFrame:(BOOL)hasAd {
-    CGRect mainFrame = [Utility GetApplicationFrame];
+    CGRect mainFrame = [Utility getApplicationSafeArea];
     if (hasAd) {
         _bannerViewController.view.hidden = NO;
         self.rootNavigationController.view.frame = CGRectMake(mainFrame.origin.x, mainFrame.origin.y, mainFrame.size.width, mainFrame.size.height - BANNER_HEIGHT);

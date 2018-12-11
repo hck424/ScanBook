@@ -33,7 +33,7 @@
 }
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.view.frame = [Utility GetApplicationFrame];
+//    self.view.frame = [Utility getApplicationSafeArea];
 }
 
 - (IBAction)onClickButtonAction:(UIButton *)sender {

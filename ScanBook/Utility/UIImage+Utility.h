@@ -11,4 +11,5 @@
 @interface UIImage (Utility)
 + (UIImage *)imageNamed:(NSString *)name withTintColor:(UIColor *)tintColor;
 + (UIImage *)tintedImageWithColor:(UIColor *)tintColor image:(UIImage *)image;
+
 @end

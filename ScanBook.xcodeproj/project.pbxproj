@@ -15,7 +15,6 @@
 		BD20D74B20EC571B000E36BF /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D74A20EC571B000E36BF /* RightViewController.m */; };
 		BD20D75A20ECA991000E36BF /* UIColor+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D75920ECA991000E36BF /* UIColor+Utility.m */; };
 		BD20D75F20ECB7EF000E36BF /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D75E20ECB7EF000E36BF /* UIImage+Utility.m */; };
-		BD20D76320ECBC3F000E36BF /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D76220ECBC3F000E36BF /* ScannerViewController.m */; };
 		BD5BBC6E20EE0BA600BCD973 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5BBC6D20EE0BA600BCD973 /* MainNavigationController.m */; };
 		BD5BCA9720F0A5F600FEC7FB /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5BCA9620F0A5F600FEC7FB /* BannerViewController.m */; };
 		BD5BCAA020F0ABB000FEC7FB /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5BCA9F20F0ABB000FEC7FB /* Utility.m */; };
@@ -76,6 +75,11 @@
 		BDA4077520EB696E00EC4791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA4077320EB696E00EC4791 /* LaunchScreen.storyboard */; };
 		BDA4077820EB696E00EC4791 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA4077720EB696E00EC4791 /* main.m */; };
 		BDA4078420EB747700EC4791 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA4078320EB747700EC4791 /* TutorialViewController.m */; };
+		BDC34F822180B5B3009D3E57 /* icon_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC34F812180B5B3009D3E57 /* icon_photo@2x.png */; };
+		BDC3BC472182DE04008FEB38 /* two_page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC3BC452182DE04008FEB38 /* two_page@2x.png */; };
+		BDC3BC482182DE04008FEB38 /* one_page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC3BC462182DE04008FEB38 /* one_page@2x.png */; };
+		BDCE8CEE2188990500D75E5E /* ShapeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDCE8CEB2188990400D75E5E /* ShapeView.xib */; };
+		BDCE8CEF2188990500D75E5E /* ShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDCE8CED2188990500D75E5E /* ShapeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,8 +100,6 @@
 		BD20D75920ECA991000E36BF /* UIColor+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utility.m"; sourceTree = "<group>"; };
 		BD20D75D20ECB7EF000E36BF /* UIImage+Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utility.h"; sourceTree = "<group>"; };
 		BD20D75E20ECB7EF000E36BF /* UIImage+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utility.m"; sourceTree = "<group>"; };
-		BD20D76120ECBC3F000E36BF /* ScannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
-		BD20D76220ECBC3F000E36BF /* ScannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
 		BD5BBC6C20EE0BA600BCD973 /* MainNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		BD5BBC6D20EE0BA600BCD973 /* MainNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		BD5BCA9520F0A5F600FEC7FB /* BannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
@@ -172,6 +174,12 @@
 		BDA4078320EB747700EC4791 /* TutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		BDA4078620EB7BF300EC4791 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		BDA4078820EB7E4B00EC4791 /* ScanBook_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanBook_Prefix.pch; sourceTree = "<group>"; };
+		BDC34F812180B5B3009D3E57 /* icon_photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_photo@2x.png"; sourceTree = "<group>"; };
+		BDC3BC452182DE04008FEB38 /* two_page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "two_page@2x.png"; sourceTree = "<group>"; };
+		BDC3BC462182DE04008FEB38 /* one_page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "one_page@2x.png"; sourceTree = "<group>"; };
+		BDCE8CEB2188990400D75E5E /* ShapeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShapeView.xib; sourceTree = "<group>"; };
+		BDCE8CEC2188990400D75E5E /* ShapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeView.h; sourceTree = "<group>"; };
+		BDCE8CED2188990500D75E5E /* ShapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,7 +289,6 @@
 				BDA4076E20EB696D00EC4791 /* Main.storyboard */,
 				BDA4076720EB696D00EC4791 /* ScanBook */,
 				BDA4076620EB696D00EC4791 /* Products */,
-				BDA4079020EB84AA00EC4791 /* Images */,
 				3C5E86B329B08B8B66A3C4D4 /* Pods */,
 				F1DC943659E5529E69FD3F0D /* Frameworks */,
 			);
@@ -298,6 +305,7 @@
 		BDA4076720EB696D00EC4791 /* ScanBook */ = {
 			isa = PBXGroup;
 			children = (
+				BDA4079020EB84AA00EC4791 /* Images */,
 				BD7730E220F4638C00DAB1C4 /* Models */,
 				BDA4078520EB7BDF00EC4791 /* Common */,
 				BDA4078120EB745600EC4791 /* Utility */,
@@ -323,6 +331,9 @@
 				BD77310920F4A2D800DAB1C4 /* CameraOverlayView.h */,
 				BD77310A20F4A2D800DAB1C4 /* CameraOverlayView.m */,
 				BD77310C20F4A2E400DAB1C4 /* CameraOverlayView.xib */,
+				BDCE8CEC2188990400D75E5E /* ShapeView.h */,
+				BDCE8CED2188990500D75E5E /* ShapeView.m */,
+				BDCE8CEB2188990400D75E5E /* ShapeView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,8 +345,6 @@
 				BD5BCA9A20F0A66E00FEC7FB /* Banner */,
 				BD20D74120EC542A000E36BF /* ScanBookViewController.h */,
 				BD20D74220EC542A000E36BF /* ScanBookViewController.m */,
-				BD20D76120ECBC3F000E36BF /* ScannerViewController.h */,
-				BD20D76220ECBC3F000E36BF /* ScannerViewController.m */,
 				BD70F9BF20F861F200CC7B1B /* ScanImagePickerController.h */,
 				BD70F9C020F861F200CC7B1B /* ScanImagePickerController.m */,
 			);
@@ -371,6 +380,8 @@
 			children = (
 				BD70FAE320F8A0D100CC7B1B /* home@2x.png */,
 				BD70FABF20F89FF900CC7B1B /* back@2x.png */,
+				BDC3BC462182DE04008FEB38 /* one_page@2x.png */,
+				BDC3BC452182DE04008FEB38 /* two_page@2x.png */,
 				BD70F9EC20F8854C00CC7B1B /* BookCover */,
 				BD70FABB20F89FF800CC7B1B /* check_circle_off@2x.png */,
 				BD70FABC20F89FF800CC7B1B /* check_circle_on@2x.png */,
@@ -383,6 +394,7 @@
 				BD70FAB620F89FF600CC7B1B /* plus@2x.png */,
 				BD70FAAB20F89FF400CC7B1B /* scanner_fill@2x.png */,
 				BD70FAB820F89FF700CC7B1B /* scanner@2x.png */,
+				BDC34F812180B5B3009D3E57 /* icon_photo@2x.png */,
 				BD70FABA20F89FF800CC7B1B /* screenshot_fill_h@2x.png */,
 				BD70FAAC20F89FF400CC7B1B /* screenshot_fill@2x.png */,
 				BD70FAC020F89FFA00CC7B1B /* screenshot_h@2x.png */,
@@ -500,6 +512,7 @@
 				BD70FAE420F8A0D200CC7B1B /* home@2x.png in Resources */,
 				BD70FAC520F89FFC00CC7B1B /* empty_book@2x.png in Resources */,
 				BD70FA3E20F8859F00CC7B1B /* notebook_cover_11@2x.png in Resources */,
+				BDC34F822180B5B3009D3E57 /* icon_photo@2x.png in Resources */,
 				BD70FAD820F89FFC00CC7B1B /* screenshot_fill_h@2x.png in Resources */,
 				BD70FAD620F89FFC00CC7B1B /* scanner@2x.png in Resources */,
 				BD70FA4920F8859F00CC7B1B /* notebook_cover_10@2x.png in Resources */,
@@ -509,9 +522,11 @@
 				BD70FADE20F89FFC00CC7B1B /* screenshot_h@2x.png in Resources */,
 				BD70FACC20F89FFC00CC7B1B /* timer_0_h@2x.png in Resources */,
 				BD70FAD220F89FFC00CC7B1B /* timer_1_h@2x.png in Resources */,
+				BDC3BC482182DE04008FEB38 /* one_page@2x.png in Resources */,
 				BD70FA4520F8859F00CC7B1B /* notebook_cover_0@2x.png in Resources */,
 				BD70FADD20F89FFC00CC7B1B /* back@2x.png in Resources */,
 				BD70FAD720F89FFC00CC7B1B /* timer_2_h@2x.png in Resources */,
+				BDC3BC472182DE04008FEB38 /* two_page@2x.png in Resources */,
 				BD70FADF20F89FFC00CC7B1B /* screenshot@2x.png in Resources */,
 				BD70FAC620F89FFC00CC7B1B /* empty_book_fill@2x.png in Resources */,
 				BD70FA4320F8859F00CC7B1B /* notebook_cover_12@2x.png in Resources */,
@@ -519,6 +534,7 @@
 				BDA4077020EB696D00EC4791 /* Main.storyboard in Resources */,
 				BD70FAD420F89FFC00CC7B1B /* plus@2x.png in Resources */,
 				BD70FAD920F89FFC00CC7B1B /* check_circle_off@2x.png in Resources */,
+				BDCE8CEE2188990500D75E5E /* ShapeView.xib in Resources */,
 				BD7730E120F449FC00DAB1C4 /* BookCollectionViewCell.xib in Resources */,
 				BD70FAC720F89FFC00CC7B1B /* timer_2@2x.png in Resources */,
 			);
@@ -570,6 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDCE8CEF2188990500D75E5E /* ShapeView.m in Sources */,
 				BD20D74820EC570E000E36BF /* LeftViewController.m in Sources */,
 				BD20D74320EC542A000E36BF /* ScanBookViewController.m in Sources */,
 				BD5BBC6E20EE0BA600BCD973 /* MainNavigationController.m in Sources */,
@@ -587,7 +604,6 @@
 				BD7730E520F463A800DAB1C4 /* BookInfo.m in Sources */,
 				BD20D75A20ECA991000E36BF /* UIColor+Utility.m in Sources */,
 				BD7730EA20F47AA500DAB1C4 /* UIButtonEx.m in Sources */,
-				BD20D76320ECBC3F000E36BF /* ScannerViewController.m in Sources */,
 				BD20D73A20EC5023000E36BF /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

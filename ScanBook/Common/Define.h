@@ -11,8 +11,8 @@
 
 #define TUTORIAL_SHOW @"Totorial_Show"
 
-#define DEFAULT_COLOR_BLUE @"#1581F9"
-#define DEFAULT_COLOR_GRAY @"#F4F4F4"
+#define DEFAULT_COLOR_BLUE RGB(0x15, 0x81, 0xf9)
+#define DEFAULT_COLOR_GRAY RGB(0xf4, 0xf4, 0xf4)
 #define BANNER_HEIGHT       60
 
 #endif

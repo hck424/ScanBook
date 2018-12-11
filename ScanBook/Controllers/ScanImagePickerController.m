@@ -27,11 +27,12 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.view.frame = [Utility GetApplicationSafeArea];
+    self.view.frame = [Utility getApplicationSafeArea];
     self.cameraOverlayView.frame = self.view.bounds;
 }
-
-
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 - (BOOL)shouldAutorotate {
     return NO;
 }

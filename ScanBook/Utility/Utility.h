@@ -10,6 +10,7 @@
 #import "ScanBookAppDelegate.h"
 
 @interface Utility : NSObject
-+ (CGRect)GetApplicationFrame;
-+ (CGRect)GetApplicationSafeArea;
++ (CGRect)getApplicationFrame;
++ (CGRect)getApplicationSafeArea;
++ (UIImage *)cropImage:(UIImage *)originalImage toRect:(CGRect)rect;
 @end

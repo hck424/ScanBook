@@ -23,24 +23,27 @@
     [super viewDidLoad];
     self.navigationBarHidden = YES;
     
+//    self.navigationBar.tintColor = [UIColor blackColor];
 }
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
     BOOL hasAd = [ScanBookAppDelegate sharedAppDelegate].hasAd;
     
-    CGRect mainFrame = [Utility GetApplicationFrame];
+    CGRect frame = [Utility getApplicationFrame];
     if (hasAd) {
-        self.view.frame = CGRectMake(mainFrame.origin.x, mainFrame.origin.y, mainFrame.size.width, mainFrame.size.height - BANNER_HEIGHT);
+        self.view.frame = CGRectMake(0, 0, frame.size.width, frame.size.height - BANNER_HEIGHT);
     }
     else {
-        self.view.frame = mainFrame;
+        self.view.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
     }
 
     for (UIViewController *viewCon in self.viewControllers) {
         viewCon.view.frame = self.view.frame;
     }
     
+//    self.view.layer.borderColor = [UIColor redColor].CGColor;
+//    self.view.layer.borderWidth = 1.0f;
 }
 
 //- (BOOL)shouldAutorotate {
