@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ShapeView.h"
+#import "CropView.h"
+#import "CropInfo.h"
 
 IB_DESIGNABLE
 
@@ -18,7 +20,7 @@ typedef NS_ENUM(NSUInteger, CAMERAOVERAY_BUTTON_TYPE) {
     CAMERAOVERAY_BUTTON_TYPE_MODE
 };
 @protocol CameraOverlayViewDelegate <NSObject >
-- (void)carmeraOverayViewOnClickedButtonAction:(CAMERAOVERAY_BUTTON_TYPE)btnType userInfo:(NSDictionary *)userInfo;
+- (void)carmeraOverayViewOnClickedButtonAction:(CAMERAOVERAY_BUTTON_TYPE)btnType cropInfo:(CropInfo *)cropInfo;
 @end
 @interface CameraOverlayView : UIView
 
@@ -27,8 +29,7 @@ typedef NS_ENUM(NSUInteger, CAMERAOVERAY_BUTTON_TYPE) {
 @property (weak, nonatomic) IBOutlet UIButton *btnShot;
 @property (weak, nonatomic) IBOutlet UIButton *btnTimer;
 @property (weak, nonatomic) IBOutlet UIButton *btnPage;
-@property (weak, nonatomic) IBOutlet ShapeView *shapeView;
-@property (weak, nonatomic) IBOutlet UILabel *lbTime;
+@property (weak, nonatomic) IBOutlet CropView *cropView;
 
 - (void)refreshButtonImage;
 @property (weak, nonatomic) id <CameraOverlayViewDelegate> delegate;

@@ -134,7 +134,6 @@
         }
     }
     
-    
     self.arrPoint = [NSMutableArray arrayWithArray:_arrPointOrg];
     
     if (_cliperType == CLIPER_TYPE_SINGLE) {

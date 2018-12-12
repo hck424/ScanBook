@@ -11,11 +11,12 @@
 #import "UIImage+Utility.h"
 #import "Define.h"
 
+
 @interface CameraOverlayView ()
 @property (nonatomic, strong) NSArray *arrTimerImgName;
 @property (nonatomic, assign) NSInteger curSecond;
 @property (nonatomic, strong) NSString *pageType;
-@property (nonatomic, strong) NSMutableDictionary *userInfo;
+@property (nonatomic, strong) CropInfo *cropInfo;
 
 @end
 
@@ -23,19 +24,18 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-//    [self refreshButtonImage];
     [_btnPage setImage:[UIImage imageNamed:@"one_page" withTintColor:DEFAULT_COLOR_BLUE] forState:UIControlStateNormal];
     [_btnPage setImage:[UIImage imageNamed:@"two_page" withTintColor:DEFAULT_COLOR_BLUE] forState:UIControlStateSelected];
     self.pageType = @"1";
-    self.userInfo = [NSMutableDictionary dictionary];
-    [_userInfo setObject:_pageType forKey:@"page_type"];
+    self.cropInfo = [[CropInfo alloc] init];
+    _cropInfo.page_type = _pageType;
 }
 
 - (void)refreshButtonImage {
     
     self.curSecond = 0;
-    [_userInfo setObject:[NSNumber numberWithInteger:_curSecond] forKey:@"timer"];
-    if (_shapeView.cliperType == CLIPER_TYPE_SINGLE) {
+    _cropInfo.timer = [NSString stringWithFormat:@"%ld",_curSecond];
+    if (_cropView.type == CROP_TYPE_SINGLE) {
         self.arrTimerImgName = [NSArray arrayWithObjects:@"timer_0", @"timer_1", @"timer_2", @"timer_3", @"timer_4", @"timer_5", nil];
         
         [_btnUndo setImage:[UIImage imageNamed:@"undo" withTintColor:DEFAULT_COLOR_BLUE] forState:UIControlStateNormal];
@@ -46,7 +46,7 @@
         [_btnTimer setImage:imgTime forState:UIControlStateNormal];
         
     }
-    else if (_shapeView.cliperType == CLIPER_TYPE_DOUBLE) {
+    else if (_cropView.type == CROP_TYPE_SINGLE) {
         
         self.arrTimerImgName = [NSArray arrayWithObjects:@"timer_0_h", @"timer_1_h", @"timer_2_h", @"timer_3_h", @"timer_4_h", @"timer_5_h", nil];
         
@@ -58,48 +58,46 @@
         
         [_btnTimer setImage:imgTime forState:UIControlStateNormal];
     }
+    
     [self setNeedsLayout];
     [self layoutIfNeeded];
-    [_shapeView refreshViews];
+
+    [_cropView refreshComponet];
 }
 
 - (IBAction)onClickButtonAcion:(UIButton *)sender {
-    if (sender == _btnUndo && [self.delegate respondsToSelector:@selector(carmeraOverayViewOnClickedButtonAction:userInfo:)]) {
-        [_delegate carmeraOverayViewOnClickedButtonAction:CAMERAOVERAY_BUTTON_TYPE_UNDO userInfo:nil];
+    if (sender == _btnUndo && [self.delegate respondsToSelector:@selector(carmeraOverayViewOnClickedButtonAction:cropInfo:)]) {
+        [_delegate carmeraOverayViewOnClickedButtonAction:CAMERAOVERAY_BUTTON_TYPE_UNDO cropInfo:nil];
     }
-    else if (sender == _btnShot && [self.delegate respondsToSelector:@selector(carmeraOverayViewOnClickedButtonAction:userInfo:)]) {
+    else if (sender == _btnShot && [self.delegate respondsToSelector:@selector(carmeraOverayViewOnClickedButtonAction:cropInfo:)]) {
         
-        if (_shapeView.arrPoint != nil) {
-            [_userInfo setObject:_shapeView.arrPoint forKey:@"edges_point"];
-        }
-        NSNumber *seperNum = [NSNumber numberWithFloat:_shapeView.heightSeperator];
-        [_userInfo setObject:seperNum forKey:@"height_sepeartor"];
-        
-        [_delegate carmeraOverayViewOnClickedButtonAction:CAMERAOVERAY_BUTTON_TYPE_SHOT userInfo:_userInfo];
+        _cropInfo.arrPoint = _cropView.arrPoint;
+        _cropInfo.height_sepeartor =  [NSString stringWithFormat:@"%lf", _cropView.height_seperator];
+        [_delegate carmeraOverayViewOnClickedButtonAction:CAMERAOVERAY_BUTTON_TYPE_SHOT cropInfo:_cropInfo];
     }
     else if (sender == _btnTimer) {
         _curSecond++;
         if (_curSecond > 5) {
             _curSecond = 0;
         }
+        
         UIImage *imgTime = [UIImage imageNamed:[_arrTimerImgName objectAtIndex:_curSecond]
                                  withTintColor:DEFAULT_COLOR_BLUE];
         
         [_btnTimer setImage:imgTime forState:UIControlStateNormal];
-        [_userInfo setObject:[NSNumber numberWithInteger:_curSecond] forKey:@"timer"];
+        _cropInfo.timer = [NSString stringWithFormat:@"%ld",_curSecond];
     }
     else if (_btnPage == sender) {
         sender.selected = !sender.selected;
-        
         if (sender.selected) {
-            _shapeView.cliperType = CLIPER_TYPE_DOUBLE;
+            _cropView.type = CROP_TYPE_DOUBLE;
             self.pageType = @"2";
         } else {
-            _shapeView.cliperType = CLIPER_TYPE_SINGLE;
+            _cropView.type = CROP_TYPE_SINGLE;
             self.pageType = @"1";
         }
-        [_userInfo setObject:_pageType forKey:@"page_type"];
-        [_shapeView refreshViews];
+        _cropInfo.page_type = _pageType;
+        
         [self refreshButtonImage];
     }
 }

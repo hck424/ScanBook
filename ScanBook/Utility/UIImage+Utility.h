@@ -11,5 +11,5 @@
 @interface UIImage (Utility)
 + (UIImage *)imageNamed:(NSString *)name withTintColor:(UIColor *)tintColor;
 + (UIImage *)tintedImageWithColor:(UIColor *)tintColor image:(UIImage *)image;
-
+- (UIImage*) cropImageWithRect:(CGRect)cropRect viewWidth:(CGFloat)viewWidth viewHeight:(CGFloat)viewHeight;
 @end

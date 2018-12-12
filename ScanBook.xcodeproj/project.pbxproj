@@ -15,9 +15,11 @@
 		BD20D74B20EC571B000E36BF /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D74A20EC571B000E36BF /* RightViewController.m */; };
 		BD20D75A20ECA991000E36BF /* UIColor+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D75920ECA991000E36BF /* UIColor+Utility.m */; };
 		BD20D75F20ECB7EF000E36BF /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BD20D75E20ECB7EF000E36BF /* UIImage+Utility.m */; };
+		BD38D4FD21C0BFB2001C9A99 /* CropView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD38D4FC21C0BFB2001C9A99 /* CropView.m */; };
 		BD5BBC6E20EE0BA600BCD973 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5BBC6D20EE0BA600BCD973 /* MainNavigationController.m */; };
 		BD5BCA9720F0A5F600FEC7FB /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5BCA9620F0A5F600FEC7FB /* BannerViewController.m */; };
 		BD5BCAA020F0ABB000FEC7FB /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5BCA9F20F0ABB000FEC7FB /* Utility.m */; };
+		BD68360221C1019B004BAC10 /* CropInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BD68360121C1019B004BAC10 /* CropInfo.m */; };
 		BD70F9C120F861F200CC7B1B /* ScanImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD70F9C020F861F200CC7B1B /* ScanImagePickerController.m */; };
 		BD70FA3E20F8859F00CC7B1B /* notebook_cover_11@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD70FA3120F8859E00CC7B1B /* notebook_cover_11@2x.png */; };
 		BD70FA3F20F8859F00CC7B1B /* notebook_cover_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD70FA3220F8859E00CC7B1B /* notebook_cover_2@2x.png */; };
@@ -100,12 +102,16 @@
 		BD20D75920ECA991000E36BF /* UIColor+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utility.m"; sourceTree = "<group>"; };
 		BD20D75D20ECB7EF000E36BF /* UIImage+Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utility.h"; sourceTree = "<group>"; };
 		BD20D75E20ECB7EF000E36BF /* UIImage+Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utility.m"; sourceTree = "<group>"; };
+		BD38D4FB21C0BFB2001C9A99 /* CropView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CropView.h; sourceTree = "<group>"; };
+		BD38D4FC21C0BFB2001C9A99 /* CropView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CropView.m; sourceTree = "<group>"; };
 		BD5BBC6C20EE0BA600BCD973 /* MainNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		BD5BBC6D20EE0BA600BCD973 /* MainNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		BD5BCA9520F0A5F600FEC7FB /* BannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		BD5BCA9620F0A5F600FEC7FB /* BannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		BD5BCA9E20F0ABB000FEC7FB /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		BD5BCA9F20F0ABB000FEC7FB /* Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		BD68360021C1019B004BAC10 /* CropInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CropInfo.h; sourceTree = "<group>"; };
+		BD68360121C1019B004BAC10 /* CropInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CropInfo.m; sourceTree = "<group>"; };
 		BD70F9BF20F861F200CC7B1B /* ScanImagePickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanImagePickerController.h; sourceTree = "<group>"; };
 		BD70F9C020F861F200CC7B1B /* ScanImagePickerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanImagePickerController.m; sourceTree = "<group>"; };
 		BD70FA3120F8859E00CC7B1B /* notebook_cover_11@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notebook_cover_11@2x.png"; sourceTree = "<group>"; };
@@ -279,6 +285,8 @@
 			children = (
 				BD7730E320F463A800DAB1C4 /* BookInfo.h */,
 				BD7730E420F463A800DAB1C4 /* BookInfo.m */,
+				BD68360021C1019B004BAC10 /* CropInfo.h */,
+				BD68360121C1019B004BAC10 /* CropInfo.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -331,6 +339,8 @@
 				BD77310920F4A2D800DAB1C4 /* CameraOverlayView.h */,
 				BD77310A20F4A2D800DAB1C4 /* CameraOverlayView.m */,
 				BD77310C20F4A2E400DAB1C4 /* CameraOverlayView.xib */,
+				BD38D4FB21C0BFB2001C9A99 /* CropView.h */,
+				BD38D4FC21C0BFB2001C9A99 /* CropView.m */,
 				BDCE8CEC2188990400D75E5E /* ShapeView.h */,
 				BDCE8CED2188990500D75E5E /* ShapeView.m */,
 				BDCE8CEB2188990400D75E5E /* ShapeView.xib */,
@@ -590,8 +600,10 @@
 				BD20D74820EC570E000E36BF /* LeftViewController.m in Sources */,
 				BD20D74320EC542A000E36BF /* ScanBookViewController.m in Sources */,
 				BD5BBC6E20EE0BA600BCD973 /* MainNavigationController.m in Sources */,
+				BD38D4FD21C0BFB2001C9A99 /* CropView.m in Sources */,
 				BD20D75F20ECB7EF000E36BF /* UIImage+Utility.m in Sources */,
 				BD70F9C120F861F200CC7B1B /* ScanImagePickerController.m in Sources */,
+				BD68360221C1019B004BAC10 /* CropInfo.m in Sources */,
 				BDA4077820EB696E00EC4791 /* main.m in Sources */,
 				BD7730E020F449FC00DAB1C4 /* BookCollectionViewCell.m in Sources */,
 				BDA4076A20EB696D00EC4791 /* ScanBookAppDelegate.m in Sources */,

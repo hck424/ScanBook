@@ -365,20 +365,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZ9-6c-HVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="v0o-kt-qIQ">
-                    <rect key="frame" x="0.0" y="0.0" width="384" height="169"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="0.0" y="0.0" width="384" height="258"/>
+                    <autoresizingMask key="autoresizingMask"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f24-vn-Ng8">
-                            <rect key="frame" x="0.0" y="0.0" width="384" height="169"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f24-vn-Ng8">
+                            <rect key="frame" x="0.0" y="0.0" width="384" height="258"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Is9-5L-H7u">
-                                    <rect key="frame" x="0.0" y="0.0" width="189.5" height="169"/>
-                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    <rect key="frame" x="20" y="62.5" width="100" height="133"/>
+                                    <color key="backgroundColor" red="0.27058823529999998" green="0.4941176471" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Is9-5L-H7u" secondAttribute="height" multiplier="1:1.33" id="n6D-c1-KXk"/>
+                                        <constraint firstAttribute="width" constant="100" id="wz7-9U-BdG"/>
+                                    </constraints>
+                                    <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="0.0" right="10"/>
                                 </imageView>
+                                <view contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="MTP-3h-gqM">
+                                    <rect key="frame" x="125" y="129" width="134" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UYR-d9-0nQ">
-                                    <rect key="frame" x="194.5" y="0.0" width="189.5" height="169"/>
+                                    <rect key="frame" x="264" y="62.5" width="100" height="133"/>
+                                    <color key="backgroundColor" red="0.0" green="0.3921568627" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="UYR-d9-0nQ" secondAttribute="height" multiplier="1:1.33" id="a4b-bs-rvf"/>
+                                        <constraint firstAttribute="width" constant="100" id="jjh-BI-zex"/>
+                                    </constraints>
                                 </imageView>
                             </subviews>
+                            <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

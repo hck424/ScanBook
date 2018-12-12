@@ -20,6 +20,8 @@
 #import "ScanBookAppDelegate.h"
 #import "ScanImagePickerController.h"
 #import "CameraOverlayView.h"
+#import "CropInfo.h"
+
 
 static NSString *const kReuseCellID = @"BookCollectionViewCell";
 
@@ -29,7 +31,9 @@ static NSString *const kReuseCellID = @"BookCollectionViewCell";
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnPhotoLibray;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnScreenShot;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (strong, nonatomic) NSMutableDictionary *cameraOverayInfo;
+
+@property (strong, nonatomic) CropInfo *cropInfo;
+
 @property (strong, nonatomic) NSMutableArray *arrData;
 @property (assign, nonatomic) NSInteger totalColumn;
 @property (strong, nonatomic) ScanImagePickerController *imagePickerController;
@@ -189,22 +193,25 @@ static NSString *const kReuseCellID = @"BookCollectionViewCell";
         self.overlayView = [[NSBundle mainBundle] loadNibNamed:@"CameraOverlayView" owner:self options:nil].firstObject;
         _overlayView.delegate = self;
         
-        
-        
-        CGRect safeRect = [Utility getApplicationSafeArea];
+        CGRect safeRect = [UIScreen mainScreen].bounds;
         _overlayView.frame =  CGRectMake(0, 0, safeRect.size.width, safeRect.size.height);
         _imagePickerController.cameraOverlayView = _overlayView;
         _imagePickerController.view.frame = safeRect;
         
-        CGSize screenSize = safeRect.size;
-
-//        CGFloat ratio =  (safeRect.size.height - _overlayView.toolBarView.frame.size.height)/ safeRect.size.width;
-        CGFloat rate = 4/3;
+//        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+//        float screenHeight= MAX(screenSize.height, screenSize.width);
+//        float screenWidth= MIN(screenSize.height, screenSize.width);
+//        float cameraAspectRatio = 4.0 / 3.0;
+//        float imageWidth = floorf(screenWidth * cameraAspectRatio);
+//        float scale = ceilf((screenHeight / imageWidth) * 10.0) / 10.0;
+//
+//        _imagePickerController.cameraViewTransform = CGAffineTransformMakeTranslation(0, (screenHeight - imageWidth) / 2.0);
+//        _imagePickerController.cameraViewTransform= CGAffineTransformMakeScale(scale, scale);
         
-        CGFloat carmeraH = screenSize.width * rate;
-        CGFloat scale = ceil((screenSize.height / carmeraH) *100)/100;
-        _imagePickerController.cameraViewTransform = CGAffineTransformMakeTranslation(0, (screenSize.height -  carmeraH) / 2.0);
-        _imagePickerController.cameraViewTransform = CGAffineTransformScale(_imagePickerController.cameraViewTransform, scale, scale);
+        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+        float scale = screenSize.height/screenSize.width;
+      _imagePickerController.cameraViewTransform = CGAffineTransformMakeScale(scale, scale);
+        
     }
     else if (soureType == UIImagePickerControllerSourceTypePhotoLibrary) {
         _imagePickerController.navigationBarHidden = NO;
@@ -221,7 +228,7 @@ static NSString *const kReuseCellID = @"BookCollectionViewCell";
 }
 
 #pragma mark -- CameraOverlayViewDelegate
-- (void)carmeraOverayViewOnClickedButtonAction:(CAMERAOVERAY_BUTTON_TYPE)btnType userInfo:(NSDictionary *)userInfo {
+- (void)carmeraOverayViewOnClickedButtonAction:(CAMERAOVERAY_BUTTON_TYPE)btnType cropInfo:(CropInfo *)cropInfo {
     if (btnType == CAMERAOVERAY_BUTTON_TYPE_UNDO) {
         NSLog(@"btn action undo");
         [self finishAndUpdate];
@@ -232,24 +239,18 @@ static NSString *const kReuseCellID = @"BookCollectionViewCell";
     }
     else if (btnType == CAMERAOVERAY_BUTTON_TYPE_SHOT) {
         NSLog(@"btn action shot");
-        NSLog(@"userInfo = %@", userInfo);
+        
         //edges_point, height_sepeartor, page_type, timer
         
         [_arrOriginImg removeAllObjects];
+        self.cropInfo = cropInfo;
+        NSInteger timeInterval = [_cropInfo.timer integerValue];
         
-        self.cameraOverayInfo = [NSMutableDictionary dictionaryWithDictionary:userInfo];
-        NSInteger timeInterval = [[_cameraOverayInfo objectForKey:@"timer"] integerValue];
-        
-        if (timeInterval == 0) {
-            [_imagePickerController takePicture];
-        }
-        else {
+        if (timeInterval > 0) {
             __block NSInteger repeatCnt = timeInterval;
-            _overlayView.lbTime.text = [NSString stringWithFormat:@"%ld's", repeatCnt];
+            
             self.timerShot = [NSTimer scheduledTimerWithTimeInterval:timeInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
-                
                 repeatCnt--;
-                self.overlayView.lbTime.text = [NSString stringWithFormat:@"%ld's", repeatCnt];
                 [self.imagePickerController takePicture];
                 
                 if (repeatCnt == 0) {
@@ -257,50 +258,51 @@ static NSString *const kReuseCellID = @"BookCollectionViewCell";
                 }
             }];
         }
+        else {
+            [_imagePickerController takePicture];
+        }
     }
 }
 - (void) processPhotos {
     
-    NSString *page = [_cameraOverayInfo objectForKey:@"page_type"];
-    NSArray *arrPoint = [_cameraOverayInfo objectForKey:@"edges_point"];
-    CGFloat seperatorHeight = [[_cameraOverayInfo objectForKey:@"height_sepeartor"] floatValue];
+    NSString *page = _cropInfo.page_type;
+    NSArray *arrPoint = _cropInfo.arrPoint;
+    CGFloat seperatorHeight = [_cropInfo.height_sepeartor floatValue];
     
-    if ([page isEqualToString:@"1"]) {
+    if ([page isEqualToString:@"1"] && arrPoint.count > 0) {
 
         //0, 2
-        CGFloat x = MIN([[arrPoint objectAtIndex:0] CGPointValue].x, [[arrPoint objectAtIndex:2] CGPointValue].x);
-        CGFloat y = MAX([[arrPoint objectAtIndex:0] CGPointValue].y, [[arrPoint objectAtIndex:2] CGPointValue].y);
+        CGFloat x = MIN([[arrPoint objectAtIndex:0] CGPointValue].x, [[arrPoint objectAtIndex:3] CGPointValue].x);
+        CGFloat y = MIN([[arrPoint objectAtIndex:0] CGPointValue].y, [[arrPoint objectAtIndex:1] CGPointValue].y);
         
-        CGFloat distanceX1 = [[arrPoint objectAtIndex:2] CGPointValue].x - [[arrPoint objectAtIndex:0] CGPointValue].x;
-        CGFloat distanceX2 = [[arrPoint objectAtIndex:4] CGPointValue].x - [[arrPoint objectAtIndex:6] CGPointValue].x;
+        CGFloat distanceX1 = [[arrPoint objectAtIndex:1] CGPointValue].x - [[arrPoint objectAtIndex:0] CGPointValue].x;
+        CGFloat distanceX2 = [[arrPoint objectAtIndex:2] CGPointValue].x - [[arrPoint objectAtIndex:3] CGPointValue].x;
         CGFloat w = MIN(ABS(distanceX1), ABS(distanceX2));
 
-        CGFloat distanceY1 = [[arrPoint objectAtIndex:6] CGPointValue].y - [[arrPoint objectAtIndex:0] CGPointValue].y;
-        CGFloat distanceY2 = [[arrPoint objectAtIndex:4] CGPointValue].y - [[arrPoint objectAtIndex:2] CGPointValue].y;
+        CGFloat distanceY1 = [[arrPoint objectAtIndex:3] CGPointValue].y - [[arrPoint objectAtIndex:0] CGPointValue].y;
+        CGFloat distanceY2 = [[arrPoint objectAtIndex:2] CGPointValue].y - [[arrPoint objectAtIndex:1] CGPointValue].y;
         CGFloat h = MIN(ABS(distanceY1), ABS(distanceY2));
         
         
         _previousView.frame = CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 150);
         _previousView.hidden = NO;
         [self.view addSubview:_previousView];
-        
+        CGRect appRect = [Utility getApplicationFrame];
         for (UIImage *img in _arrOriginImg) {
             
-            CGFloat radio = img.size.width/self.view.frame.size.width;
-//            UIImage *scaleImg = [[UIImage alloc] initWithCGImage:[img CGImage] scale:scale orientation:img.imageOrientation];
             
-            CGRect cropRect = CGRectMake(x*radio, y*radio, w*radio, h*radio);
+            CGRect cropRect = CGRectMake(x, y, w, h);
             
             NSLog(@"crop rect %@", NSStringFromCGRect(cropRect));
             
-            UIImage *newImg = [Utility cropImage:img toRect:cropRect];
+            UIImage *cropImg = [img cropImageWithRect:cropRect viewWidth:appRect.size.width viewHeight:appRect.size.height];
             
             NSLog(@"origin %@", img);
 //            NSLog(@"scale %@", scaleImg);
-            NSLog(@"new %@", newImg);
+            NSLog(@"new %@", cropImg);
     
             _ivOrign.image = img;
-            _ivNew.image = newImg;
+            _ivNew.image = cropImg;
             break;
         }
     }

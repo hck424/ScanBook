@@ -60,11 +60,11 @@
     if ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationLandscapeLeft
         || [[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationLandscapeRight) {
         // Landscape
-        NSLog(@"===== Landscape");
+//        NSLog(@"===== Landscape");
         
     } else {
         // Portrait
-        NSLog(@"===== Portrait");
+//        NSLog(@"===== Portrait");
         
     }
 }

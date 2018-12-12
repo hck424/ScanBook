@@ -35,4 +35,28 @@
     UIGraphicsEndImageContext();
     return coloredImage;
 }
+- (UIImage *) cropImageWithRect:(CGRect)cropRect viewWidth:(CGFloat)viewWidth viewHeight:(CGFloat)viewHeight {
+
+    // viewWidth, viewHeight are dimensions of imageView
+    
+    const CGFloat imageViewScaleW = self.size.width/viewWidth; //MAX(self.size.width/viewWidth, self.size.height/viewHeight);
+    const CGFloat imageViewScaleH = self.size.height/viewHeight;
+    // Scale cropRect to handle images larger than shown-on-screen size
+    cropRect.origin.x *= imageViewScaleW;
+    cropRect.origin.y *= imageViewScaleH;
+    cropRect.size.width *= imageViewScaleW;
+    cropRect.size.height *= imageViewScaleH;
+    
+    // Perform cropping in Core Graphics
+    CGImageRef cutImageRef = CGImageCreateWithImageInRect(self.CGImage, cropRect);
+    
+    // Convert back to UIImage
+    UIImage* croppedImage = [UIImage imageWithCGImage:cutImageRef scale:1.0f orientation:self.imageOrientation];
+    
+    // Clean up reference pointers
+    CGImageRelease(cutImageRef);
+    
+    return croppedImage;
+    
+}
 @end
